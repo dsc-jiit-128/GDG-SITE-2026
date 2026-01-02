@@ -1,5 +1,5 @@
-"use client"
-import "./homePage.css"
+"use client";
+import "./homePage.css";
 import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 import {
@@ -16,12 +16,51 @@ import {
   Code2,
   Globe
 } from "lucide-react";
-import Navbar from "@/src/component/Navbar";
-import Footer from "@/src/component/Footer";
 
 export default function HomePage() {
   const [fade, setFade] = useState(false);
+  const [currTitle, setCurTitle] = useState("");
+  const [currSubTitle, setSubCurTitle] = useState("");
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const heroTitleMessages = [
+    {
+      heroTitle: "Create. Conquer. Collaborate.",
+      heroSubTitle:
+        "The ultimate hub for student builders. Build your squad, win the hackathons, and own the campus tech scene."
+    },
+    {
+      heroTitle: "Build for mobile. Scale with cloud.\nThrive together.",
+      heroSubTitle:
+        "Stop just building apps—start building infrastructure. Join the community pushing mobile and cloud to the limit."
+    },
+    {
+      heroTitle: "Shape the future of\nWeb and AI.",
+      heroSubTitle:
+        "Moving beyond the basics. From React to LLMs, we’re tinkering with the tech that will define our careers."
+    },
+    {
+      heroTitle: "Innovate with data.\nLead with AI.",
+      heroSubTitle:
+        "Deep dive into data science and neural networks. Turn your academic projects into real-world AI applications."
+    },
+    {
+      heroTitle: "Innovate. Learn. Grow.",
+      heroSubTitle:
+        "The campus sandbox for big ideas. A place to experiment with new tech, share knowledge, and level up together."
+    },
+    {
+      heroTitle: "Design. Develop. Deploy.",
+      heroSubTitle:
+        "Go beyond the syllabus. Master the full product lifecycle and ship live code before you even graduate."
+    }
+  ];
+
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * heroTitleMessages.length);
+    setCurTitle(heroTitleMessages[randomIndex].heroTitle);
+    setSubCurTitle(heroTitleMessages[randomIndex].heroSubTitle);
+  }, []);
 
   useEffect(() => {
     const timeout = setTimeout(() => setFade(true), 50);
@@ -38,56 +77,112 @@ export default function HomePage() {
 
   return (
     <section>
-      <Navbar /><div ref={containerRef}>
-      <div className="grid-background" />
-      <div className="cursor-spotlight" />
 
-      <section className="hero">
-        <img 
-          src="/gdg-outlined-logo.png" 
-          alt="GDG Logo" 
-          className={`hero-background-logo${fade ? " visible" : ""}`}
-        />
+      <div ref={containerRef}>
+        <div className="grid-background" />
+        <div className="cursor-spotlight" />
 
-        <div className={`hero-title fade-up${fade ? " visible" : ""}`}>
-          Google Developer Groups
-          <br />Jaypee Institute of Information Technology - Sec 128
-        </div>
-        
-        <p className={`hero-subtext fade-up${fade ? " visible" : ""}`}>
-          We are a community of students passionate about Google technologies. 
-          From Cloud to Android, we bridge the gap between theory and practice 
-          through peer-to-peer learning and building impactful projects.
-        </p>
+        <div className="shape shape-decoration shape-1" />
+        <div className="shape shape-decoration shape-2" />
+        <div className="shape shape-decoration shape-3" />
+        <div className="shape shape-decoration shape-4" />
 
-        <div className={`hero-actions fade-up${fade ? " visible" : ""}`}>
-          <a href="#" className="btn-primary">Join Chapter</a>
-          <a href="#" className="btn-secondary-demo-dashboard" style={{
-            border: '1px solid var(--border)',
-            padding: '0.8rem 2rem',
-            borderRadius: '999px',
-            color: 'var(--text-primary)',
-            textDecoration: 'none'
-          }}>View Projects</a>
-        </div>
+        <section className="hero">
+          <img
+            src="/gdg-outlined-logo.png"
+            alt="GDG Logo"
+            className={`hero-background-logo${fade ? " visible" : ""}`}
+          />
 
-        <div className={`hero-stats fade-up${fade ? " visible" : ""}`}>
-          <div className="stat-item">
-            <span className="stat-value">500+</span>
-            <span className="stat-label">Members</span>
+          <div className={`hero-title fade-up${fade ? " visible" : ""}`}>
+            {currTitle}
           </div>
-          <div className="stat-item">
-            <span className="stat-value">20+</span>
-            <span className="stat-label">Events / Year</span>
+
+          <p className={`hero-subtext fade-up${fade ? " visible" : ""}`}>
+            {currSubTitle}
+          </p>
+
+          <div className={`hero-actions fade-up${fade ? " visible" : ""}`}>
+            <a href="#" className="btn-primary">
+              Study Jams
+            </a>
+            <a
+              href="#"
+              className="btn-secondary-demo-dashboard"
+              style={{
+                border: "1px solid var(--border)",
+                padding: "0.8rem 2rem",
+                borderRadius: "999px",
+                color: "var(--text-primary)",
+                textDecoration: "none"
+              }}
+            >
+              View Events
+            </a>
           </div>
-          <div className="stat-item">
-            <span className="stat-value">15+</span>
-            <span className="stat-label">Projects</span>
+
+          <div className={`hero-stats fade-up${fade ? " visible" : ""}`}>
+            <div className="stat-item">
+              <span className="stat-value">500+</span>
+              <span className="stat-label">Members</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-value">20+</span>
+              <span className="stat-label">Events / Year</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-value">15+</span>
+              <span className="stat-label">Projects</span>
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
-    <Footer />
+        </section>
+        <section className={`what-do-we-do fade-up ${fade ? "visible" : ""}`}>
+          <span className="section-label">Our Impact</span>
+
+          <div className="content-wrapper">
+            <div className="text-content">
+              <h2>What do we do?</h2>
+              <p>
+                With our team's motto being <span className="motto-highlight">"Giving Direction to Greatness"</span>,
+                we help students climb mountains on their own, as high as possible.
+                We provide the tools, community, and guidance to turn curiosity into industry-ready expertise.
+              </p>
+            </div>
+
+            <div className="flagship-cards">
+              <div className="mini-card">
+                <div className="icon-box">
+                  <Zap size={24} />
+                </div>
+                <div className="card-info">
+                  <h4>BitBox</h4>
+                  <span>Flagship Hackathon</span>
+                </div>
+              </div>
+
+              <div className="mini-card">
+                <div className="icon-box">
+                  <Sparkles size={24} />
+                </div>
+                <div className="card-info">
+                  <h4>ExploreML</h4>
+                  <span>AI/ML Deep Dive</span>
+                </div>
+              </div>
+
+              <div className="mini-card">
+                <div className="icon-box">
+                  <Globe size={24} />
+                </div>
+                <div className="card-info">
+                  <h4>Workshops & Meetups</h4>
+                  <span>Weekly Tech Sessions</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </section>
   );
 }
