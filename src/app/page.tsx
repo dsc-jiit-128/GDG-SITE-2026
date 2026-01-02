@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import HomePageCards from "@/src/component/HomePageCards";
 import HomePageEventCards from "../component/HomePageEventCards";
+import SocialHomePage from "../component/SocialCardsHomePage";
 
 export default function HomePage() {
   const [fade, setFade] = useState(false);
@@ -133,19 +134,8 @@ export default function HomePage() {
             </a>
           </div>
 
-          <div className={`hero-stats fade-up${fade ? " visible" : ""}`}>
-            <div className="stat-item">
-              <span className="stat-value">500+</span>
-              <span className="stat-label">Members</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-value">20+</span>
-              <span className="stat-label">Events / Year</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-value">15+</span>
-              <span className="stat-label">Projects</span>
-            </div>
+          <div className={`fade-up ${fade ? "visible" : ""}`}>
+            <SocialHomePage />
           </div>
         </section>
         <section className={`what-do-we-do fade-up ${fade ? "visible" : ""}`}>

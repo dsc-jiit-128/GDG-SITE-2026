@@ -63,13 +63,15 @@ body {
 }
 
 .hero {
-  min-height: 90vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 1.5rem;
+  padding: 8rem 1.5rem 0; /* Increased top padding from 0 to 8rem */
+  margin-bottom: -2rem;
+  position: relative;
 }
 
 .hero-title {
@@ -306,7 +308,7 @@ body {
 /* homePage.css additions */
 
 .what-do-we-do {
-  padding: 8rem 2rem;
+  padding: 4rem 2rem 8rem; 
   max-width: 1100px;
   margin: 0 auto;
   display: flex;
