@@ -1,5 +1,6 @@
 "use client"
 import "./homePage.css"
+import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 import {
   CheckCircle,
@@ -15,6 +16,7 @@ import {
   Code2,
   Globe
 } from "lucide-react";
+import Navbar from "@/src/component/Navbar";
 
 export default function HomePage() {
   const [fade, setFade] = useState(false);
@@ -34,7 +36,8 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div ref={containerRef}>
+    <section>
+      <Navbar /><div ref={containerRef}>
       <div className="grid-background" />
       <div className="cursor-spotlight" />
 
@@ -83,30 +86,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <section className="grid-features-section">
-        <div className={`grid-features-header fade-up${fade ? " visible" : ""}`}>
-          <h2>What we do</h2>
-          <p>Guided by Google Developers, powered by student innovation.</p>
-        </div>
-        <div className="features-grid">
-          <div className={`feature-card fade-up${fade ? " visible" : ""}`}>
-            <Code2 size={28} className="card-icon" />
-            <h3>Workshops</h3>
-            <p>Hands-on sessions on Flutter, Firebase, GCP, and Web Technologies to build production-ready skills.</p>
-          </div>
-          <div className={`feature-card fade-up${fade ? " visible" : ""}`}>
-            <Users size={28} className="card-icon" />
-            <h3>Community</h3>
-            <p>Networking with industry experts and fellow developers to foster collaboration and career growth.</p>
-          </div>
-          <div className={`feature-card fade-up${fade ? " visible" : ""}`}>
-            <Globe size={28} className="card-icon" />
-            <h3>Solution Challenge</h3>
-            <p>Solving real-world problems using Google technology as part of the global annual competition.</p>
-          </div>
-        </div>
-      </section>
     </div>
+    </section>
   );
 }
