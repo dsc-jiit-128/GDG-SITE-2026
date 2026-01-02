@@ -1,17 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Albert_Sans } from "next/font/google";
 import "./globals.css";
 import Footer from "../component/Footer";
 import Navbar from "../component/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const albertSans = Albert_Sans({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-albert-sans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -26,9 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${albertSans.variable} antialiased`}>
         <Navbar />
         {children}
         <Footer />

@@ -136,6 +136,52 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+        <section className={`what-do-we-do fade-up ${fade ? "visible" : ""}`}>
+          <span className="section-label">Our Impact</span>
+
+          <div className="content-wrapper">
+            <div className="text-content">
+              <h2>What do we do?</h2>
+              <p>
+                With our team's motto being <span className="motto-highlight">"Giving Direction to Greatness"</span>,
+                we help students climb mountains on their own, as high as possible.
+                We provide the tools, community, and guidance to turn curiosity into industry-ready expertise.
+              </p>
+            </div>
+
+            <div className="flagship-cards">
+              <div className="mini-card">
+                <div className="icon-box">
+                  <Zap size={24} />
+                </div>
+                <div className="card-info">
+                  <h4>BitBox</h4>
+                  <span>Flagship Hackathon</span>
+                </div>
+              </div>
+
+              <div className="mini-card">
+                <div className="icon-box">
+                  <Sparkles size={24} />
+                </div>
+                <div className="card-info">
+                  <h4>ExploreML</h4>
+                  <span>AI/ML Deep Dive</span>
+                </div>
+              </div>
+
+              <div className="mini-card">
+                <div className="icon-box">
+                  <Globe size={24} />
+                </div>
+                <div className="card-info">
+                  <h4>Workshops & Meetups</h4>
+                  <span>Weekly Tech Sessions</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
   );

@@ -303,6 +303,107 @@ body {
     opacity: 0.07;
   }
 }
+/* homePage.css additions */
+
+.what-do-we-do {
+  padding: 8rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+}
+
+.section-label {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.text-content h2 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.text-content p {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+.motto-highlight {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-style: italic;
+}
+
+.flagship-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mini-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.mini-card:hover {
+  transform: translateX(10px);
+  border-color: var(--accent);
+}
+
+.icon-box {
+  width: 48px;
+  height: 48px;
+  background: var(--accent-soft);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+
+.card-info h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.card-info span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .mini-card {
+    text-align: left;
+  }
+}
 
 
 @media (max-width: 768px) {
