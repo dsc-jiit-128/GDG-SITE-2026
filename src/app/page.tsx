@@ -1,65 +1,112 @@
-import Image from "next/image";
+"use client"
+import "./homePage.css"
+import { useEffect, useState, useRef } from "react";
+import {
+  CheckCircle,
+  CalendarRange,
+  ShoppingBag,
+  Sparkles,
+  XCircle,
+  Car,
+  Zap,
+  Coffee,
+  FolderHeart,
+  Users,
+  Code2,
+  Globe
+} from "lucide-react";
 
-export default function Home() {
+export default function HomePage() {
+  const [fade, setFade] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setFade(true), 50);
+    const handleMouseMove = (e: MouseEvent) => {
+      document.documentElement.style.setProperty("--mouse-x", `${e.clientX}px`);
+      document.documentElement.style.setProperty("--mouse-y", `${e.clientY}px`);
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div ref={containerRef}>
+      <div className="grid-background" />
+      <div className="cursor-spotlight" />
+
+      <section className="hero">
+        {/* GDG Logo Background */}
+        <img 
+          src="/gdg-outlined-logo.png" 
+          alt="GDG Logo" 
+          className={`hero-background-logo${fade ? " visible" : ""}`}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+
+        <div className={`hero-title fade-up${fade ? " visible" : ""}`}>
+          Google Developer Groups
+          <br />Jaypee Institute of Information Technology - Sec 128
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        
+        <p className={`hero-subtext fade-up${fade ? " visible" : ""}`}>
+          We are a community of students passionate about Google technologies. 
+          From Cloud to Android, we bridge the gap between theory and practice 
+          through peer-to-peer learning and building impactful projects.
+        </p>
+
+        <div className={`hero-actions fade-up${fade ? " visible" : ""}`}>
+          <a href="#" className="btn-primary">Join Chapter</a>
+          <a href="#" className="btn-secondary-demo-dashboard" style={{
+            border: '1px solid var(--border)',
+            padding: '0.8rem 2rem',
+            borderRadius: '999px',
+            color: 'var(--text-primary)',
+            textDecoration: 'none'
+          }}>View Projects</a>
         </div>
-      </main>
+
+        <div className={`hero-stats fade-up${fade ? " visible" : ""}`}>
+          <div className="stat-item">
+            <span className="stat-value">500+</span>
+            <span className="stat-label">Members</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-value">20+</span>
+            <span className="stat-label">Events / Year</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-value">15+</span>
+            <span className="stat-label">Projects</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="grid-features-section">
+        <div className={`grid-features-header fade-up${fade ? " visible" : ""}`}>
+          <h2>What we do</h2>
+          <p>Guided by Google Developers, powered by student innovation.</p>
+        </div>
+        <div className="features-grid">
+          <div className={`feature-card fade-up${fade ? " visible" : ""}`}>
+            <Code2 size={28} className="card-icon" />
+            <h3>Workshops</h3>
+            <p>Hands-on sessions on Flutter, Firebase, GCP, and Web Technologies to build production-ready skills.</p>
+          </div>
+          <div className={`feature-card fade-up${fade ? " visible" : ""}`}>
+            <Users size={28} className="card-icon" />
+            <h3>Community</h3>
+            <p>Networking with industry experts and fellow developers to foster collaboration and career growth.</p>
+          </div>
+          <div className={`feature-card fade-up${fade ? " visible" : ""}`}>
+            <Globe size={28} className="card-icon" />
+            <h3>Solution Challenge</h3>
+            <p>Solving real-world problems using Google technology as part of the global annual competition.</p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
