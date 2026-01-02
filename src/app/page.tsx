@@ -43,7 +43,6 @@ export default function HomePage() {
       <div className="cursor-spotlight" />
 
       <section className="hero">
-        {/* GDG Logo Background */}
         <img 
           src="/gdg-outlined-logo.png" 
           alt="GDG Logo" 
