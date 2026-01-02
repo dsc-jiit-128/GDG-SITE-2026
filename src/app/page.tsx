@@ -16,7 +16,6 @@ import {
   Code2,
   Globe
 } from "lucide-react";
-import Navbar from "@/src/component/Navbar";
 
 export default function HomePage() {
   const [fade, setFade] = useState(false);
@@ -78,7 +77,6 @@ export default function HomePage() {
 
   return (
     <section>
-      <Navbar />
 
       <div ref={containerRef}>
         <div className="grid-background" />
