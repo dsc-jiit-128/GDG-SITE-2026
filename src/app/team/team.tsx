@@ -27,7 +27,6 @@ interface TeamMember {
   };
 }
 
-// Helper to generate consistent mock images
 const getAvatar = (seed: string) => `https://api.dicebear.com/7.x/avataaars/svg?seed=${seed}&backgroundColor=b6e3f4,c0aede,d1d4f9`;
 
 const teamData: TeamMember[] = [
@@ -203,7 +202,6 @@ export default function Team() {
   }, [activeCategory]);
 
   return (
-    // REMOVED 'fade-up visible' to ensure visibility
     <div className="team-container">
       <div className="text-center mb-8">
         <h1 style={{ fontSize: '1.5rem', color: '#fff', fontWeight: 600 }}></h1>
@@ -271,12 +269,13 @@ export default function Team() {
           opts={{
             align: "start",
             loop: true,
+            dragFree: true,
           }}
           className="w-full team-carousel"
         >
-          <CarouselContent className="-ml-4">
+          <CarouselContent className="-ml-2">
             {filteredMembers.map((member) => (
-              <CarouselItem key={member.id} className="pl-4 basis-1/3 md:basis-1/5 lg:basis-1/6 flex justify-center items-center">
+              <CarouselItem key={member.id} className="pl-1 basis-1/7 md:basis-1/9 lg:basis-1/12 flex justify-center items-center">
                 <div 
                   className={`carousel-avatar-btn ${selectedMember?.id === member.id ? 'selected' : ''}`}
                   onClick={() => setSelectedMember(member)}
@@ -286,9 +285,8 @@ export default function Team() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          {/* UPDATED ARROWS: Moved inside (-left-4) and added z-index to ensure visibility */}
-          <CarouselPrevious className="hidden md:flex -left-4 bg-black/50 border-white text-white hover:bg-white hover:text-black z-50" />
-          <CarouselNext className="hidden md:flex -right-4 bg-black/50 border-white text-white hover:bg-white hover:text-black z-50" />
+          <CarouselPrevious className="flex -left-12 bg-zinc-800 border-zinc-700 text-white hover:bg-zinc-700 hover:text-white" />
+          <CarouselNext className="flex -right-12 bg-zinc-800 border-zinc-700 text-white hover:bg-zinc-700 hover:text-white" />
         </Carousel>
       </div>
     </div>
