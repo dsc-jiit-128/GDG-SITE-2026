@@ -6,7 +6,6 @@ import coreData from "./CoreTeam.json";
 
 const SocialIcon = ({ type, url }: { type: string; url: string }) => {
   const iconClass = "w-5 h-5 text-gray-400 hover:text-blue-400 transition-colors duration-200";
-  
   switch (type) {
     case "github": return <a href={url} target="_blank" rel="noopener noreferrer"><Github className={iconClass} /></a>;
     case "linkedin": return <a href={url} target="_blank" rel="noopener noreferrer"><Linkedin className={iconClass} /></a>;
