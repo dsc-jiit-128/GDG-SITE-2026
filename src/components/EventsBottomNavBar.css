@@ -91,7 +91,7 @@
 
 @media (max-width: 768px) {
   .events-bottom-container {
-    bottom: 100px;
+    bottom: 50px;
   }
 
   .events-bottom-nav {
