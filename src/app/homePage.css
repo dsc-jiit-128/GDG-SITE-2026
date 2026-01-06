@@ -73,6 +73,7 @@ body {
   margin-bottom: -2rem;
   position: relative;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .hero-title {
@@ -167,6 +168,8 @@ body {
   pointer-events: none;
   transition: opacity 1.5s ease-out, transform 1.5s ease-out;
   filter: drop-shadow(0 0 15px rgba(217, 164, 65, 0.2)) brightness(0.6);
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .hero-background-logo.visible {
