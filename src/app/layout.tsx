@@ -34,6 +34,11 @@ export default function layout({
     <html lang="en">
       <body className={`${albertSans.variable} antialiased`}>
         <div className="grid-background" />
+        <div className="cursor-spotlight" />
+        <div className="shape-decoration shape-1" />
+        <div className="shape-decoration shape-2" />
+        <div className="shape-decoration shape-3" />
+        <div className="shape-decoration shape-4" />
         
         <div className="hidden-mobile">
           <Navbar />
