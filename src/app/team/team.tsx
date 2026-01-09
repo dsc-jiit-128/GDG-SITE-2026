@@ -100,13 +100,12 @@ export default function Team() {
 
   useEffect(() => {
     if (api && filteredMembers.length > 0 && selectedMember) {
-      // Find index of the randomly selected member to scroll carousel to them
       const index = filteredMembers.findIndex(m => m.id === selectedMember.id);
       if (index !== -1) {
         api.scrollTo(index);
       }
     }
-  }, [activeCategory, api, selectedMember]); // Added selectedMember to dependency to sync carousel
+  }, [activeCategory, api, selectedMember]);
 
   return (
     <div className="team-container">
@@ -133,17 +132,8 @@ export default function Team() {
             </h2>
 
             <p className="profile-quote">
-              <TextAnimate
-                as="span"
-                key={`${selectedMember.id}-quote`}
-                by="word"
-                animation="blurInUp"
-                duration={0.5}
-                delay={0}
-                once={false}
-              >
+              
                 {selectedMember.quote}
-              </TextAnimate>
             </p>
 
             <div className="social-links">
