@@ -19,11 +19,11 @@ const Footer: React.FC = () => {
         <div className="footer-container">
           <div className="footer-column brand-column">
             <div className="footer-logo">
-                <span className="g-dot blue"></span>
-                <span className="g-dot red"></span>
-                <span className="g-dot yellow"></span>
-                <span className="g-dot green"></span>
-                <span className="brand-name">GDG JIIT</span>
+              <span className="g-dot blue"></span>
+              <span className="g-dot red"></span>
+              <span className="g-dot yellow"></span>
+              <span className="g-dot green"></span>
+              <span className="brand-name">GDG JIIT</span>
             </div>
             <p className="brand-desc">
               Google Developer Group at Jaypee Institute of Information Technology. A community of developers interested in Google's technologies.
@@ -53,7 +53,11 @@ const Footer: React.FC = () => {
 
         <div className="footer-copyright">
           <p>&copy; 2026 Google Developer Group JIIT. All rights reserved.</p>
+          <p className="made-with-love">
+            Made with ❤️ by <strong>Shourya</strong> & <strong>Ansh</strong>
+          </p>
         </div>
+
       </div>
     </footer>
   );

@@ -11,7 +11,7 @@ import {
 } from "@/src/components/ui/carousel";
 import { TextAnimate } from "@/src/components/ui/text-animate";
 
-// Import JSON data
+
 import mentorsData from "./Mentors.json";
 import leadsData from "./TeamLead.json";
 import coreData from "./CoreTeam.json";
@@ -46,6 +46,7 @@ function extractGithubUsername(url: string): string {
 
 
 export default function Team() {
+  const [api, setApi] = useState<any>(null);
   const [activeCategory, setActiveCategory] = useState<Category>("Team Leads");
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
   const categoryDataMap: Record<Category, TeamMember[]> = {
@@ -75,6 +76,15 @@ export default function Team() {
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
+
+
+
+  useEffect(() => {
+    if (api && filteredMembers.length > 0) {
+      api.scrollTo(0);
+    }
+  }, [activeCategory, api]);
+
 
   return (
     <div className="team-container">
@@ -135,12 +145,12 @@ export default function Team() {
                 </a>
               )}
 
-              {selectedMember.socials.discord && (
+              {/* {selectedMember.socials.discord && (
                 <a href={`${selectedMember.socials.discord}`} className="social-item">
                   <MessageSquare size={24} />
                   <span>{selectedMember.socials.discord}</span>
                 </a>
-              )}
+              )} */}
             </div>
           </div>
         </div>
@@ -160,19 +170,29 @@ export default function Team() {
 
       <div className="carousel-container">
         <Carousel
+          setApi={setApi}
           opts={{
             align: "center",
             loop: true,
             dragFree: true,
+            containScroll: "trimSnaps",
+            skipSnaps: false,
+            slidesToScroll: 1,
           }}
           className="w-full team-carousel"
         >
+
           <CarouselContent className="-ml-2 py-10">
             {filteredMembers.map((member) => (
               <CarouselItem key={member.id} className="pl-1 basis-1/5 md:basis-1/9 lg:basis-1/12 flex justify-center items-center ">
                 <div
                   className={`carousel-avatar-btn ${selectedMember?.id === member.id ? 'selected' : ''}`}
-                  onClick={() => setSelectedMember(member)}
+                  onClick={() => {
+                    setSelectedMember(member);
+                    const index = filteredMembers.findIndex(m => m.id === member.id);
+                    api?.scrollTo(index);
+                  }}
+
                 >
                   <img src={member.image} alt={member.name} />
                 </div>
