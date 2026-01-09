@@ -48,6 +48,9 @@
 }
 
 @media (max-width: 768px) {
+  .eventcategory-container{
+    margin-top: 2rem;
+  }
   .eventcategory-nav {
     gap: 24px;
     overflow-x: auto;
