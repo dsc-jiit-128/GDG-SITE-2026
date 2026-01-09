@@ -34,19 +34,19 @@ const Footer: React.FC = () => {
             <h3>Quick Links</h3>
             <ul className="footer-links">
               <li><a href="#events">Events</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#resources">Resources</a></li>
-              <li><a href="#forum">Forum</a></li>
+              <li><a href="#team">Teams</a></li>
+              <li><a href="#bitbox">Bitbox</a></li>
+              <li><a href="#studyjam">StudyJam</a></li>
             </ul>
           </div>
 
           <div className="footer-column">
             <h3>Connect</h3>
             <ul className="footer-links">
-              <li><a href="https://twitter.com" target="_blank" rel="noreferrer">Twitter</a></li>
-              <li><a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a></li>
-              <li><a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a></li>
-              <li><a href="https://discord.com" target="_blank" rel="noreferrer">Discord</a></li>
+              <li><a href="https://x.com/gdgjiit" target="_blank" rel="noreferrer">Twitter</a></li>
+              <li><a href="https://www.linkedin.com/company/dsc-jiit" target="_blank" rel="noreferrer">LinkedIn</a></li>
+              <li><a href="https://www.instagram.com/gdg_jiit/" target="_blank" rel="noreferrer">Instagram</a></li>
+              <li><a href="https://discord.com/invite/HqatsVyq5H" target="_blank" rel="noreferrer">Discord</a></li>
             </ul>
           </div>
         </div>
