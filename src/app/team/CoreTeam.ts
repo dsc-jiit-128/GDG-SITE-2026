@@ -1,10 +1,39 @@
-[
+// Imports for Core Team Images
+import dhruvImg from "./teamImages/CoreTeam/20251231_210723(1)(1) - Dhruv Arora.webp";
+import tenkaiImg from "./teamImages/CoreTeam/20260102_145718 - Tenkai.webp";
+import abhinandanImg from "./teamImages/CoreTeam/Abhinandan - Abhinandan.webp";
+import anahitaImg from "./teamImages/CoreTeam/ANAHITA - Anahita.webp";
+import anushkaImg from "./teamImages/CoreTeam/Anushka - Anushka.webp";
+import arushiImg from "./teamImages/CoreTeam/Arushi - Arushi.webp";
+import aryanImg from "./teamImages/CoreTeam/Aryan_Varshney - ARYAN VARSHNEY J992401030154.webp";
+import harshdeepImg from "./teamImages/CoreTeam/Harshdeep singh - Harshdeep Singh.webp";
+import hitikaImg from "./teamImages/CoreTeam/Hitika Mathur - Hitika Mathur.webp";
+import shreyashImg from "./teamImages/CoreTeam/I46A0306 - Shreyash.webp";
+import satyamImg from "./teamImages/CoreTeam/IMG_6856 - Satyam Pundhir.webp";
+import ishaImg from "./teamImages/CoreTeam/IMG-20250907-WA0073(2) - Isha Bhargava.webp";
+import vanishaImg from "./teamImages/CoreTeam/IMG-20251226-WA0133 - Vanisha Sharma.webp";
+import anantImg from "./teamImages/CoreTeam/IMG-20260106-WA0002 - Anant Goel.webp";
+import archiImg from "./teamImages/CoreTeam/IMG20250718165812 - Archi.webp";
+import vedanshImg from "./teamImages/CoreTeam/Vedansh_Dwivedi - Vedansh Dwivedi.webp";
+import nayshaImg from "./teamImages/CoreTeam/NayshaDwivedi - Naysha Dwivedi.webp";
+import parvImg from "./teamImages/CoreTeam/ParvGarg - Parv 2nd.webp";
+import pratishthaImg from "./teamImages/CoreTeam/Pratishtha_Singh - Pratishtha Singh.webp";
+import revantImg from "./teamImages/CoreTeam/Revant_Srivastava - Revant Srivastava.webp";
+import shivamImg from "./teamImages/CoreTeam/ShivamShishodia - Shivam Shishodia.webp";
+import shriyaImg from "./teamImages/CoreTeam/Shriya Singh - Shriya Singh.webp";
+import tarushiImg from "./teamImages/CoreTeam/Tarushi Saxena - Tarushi Saxena.webp";
+import anmolImg from "./teamImages/CoreTeam/WhatsApp Image 2026-01-08 at 11.22.53 AM.jpeg"; 
+import dhruviImg from "./teamImages/CoreTeam/608529764_4324470704546445_4905425225679593134_n - DG Codes.webp";
+import anshImg from "./teamImages/CoreTeam/Ansh Mahajan - Ansh Mahajan.webp";
+
+
+const coreData = [
   {
     "id": 1,
     "name": "Shourya Singh",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1MF0Bpw9x6S4V7_4j2ogx9ic1d0msqsHo",
+    "image": tenkaiImg,
     "quote": "Professional github account stalker",
     "socials": {
       "github": "https://github.com/Shourya523",
@@ -18,7 +47,7 @@
     "name": "Harshdeep singh",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1rk4Lhxv1kRpzYbsK-OKZ-_JplSy2Ft7U",
+    "image": harshdeepImg,
     "quote": "Turning ideas into interactive experiences through design and development.",
     "socials": {
       "github": "https://github.com/harsh22255",
@@ -32,7 +61,7 @@
     "name": "Anant Goel",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1cFsxyPXoMNL8YZft5CUTyLg2157uCmMQ",
+    "image": anantImg,
     "quote": "I disguise bugs as features",
     "socials": {
       "github": "https://github.com/subwaysurface123?tab=overview&from=2025-12-01&to=2025-12-31",
@@ -46,7 +75,7 @@
     "name": "Aryan Varshney",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1VEptAV5dvDxJYHyvVg_U1CB9NygaV4BP",
+    "image": aryanImg,
     "quote": "Apne liye jiya to kya jiya, kabhi desh ke liye ji kar to dekho \ud83c\uddee\ud83c\uddf3",
     "socials": {
       "github": "https://github.com/AryanV-Coder",
@@ -60,7 +89,7 @@
     "name": "Parv Garg",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1qNWQq2viaZvnB1VW3jhW41Gg-R9T9KbH",
+    "image": parvImg,
     "quote": "A Change in life will not always be the Best, but a try to take a Chance for a Better life will be never a Loss in our Life. - Jan Jensen",
     "socials": {
       "github": "https://github.com/parvgarg05",
@@ -74,7 +103,7 @@
     "name": "Shreyash Trivedi",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1UxMmlQw3of8QkOTk8g4Nlc-T6Fxn9j-a",
+    "image": shreyashImg,
     "quote": "I build what I wish to see in the world",
     "socials": {
       "github": "https://github.com/Wacko13",
@@ -88,7 +117,7 @@
     "name": "Vedansh Dwivedi",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1YzheDwOhB2yBveV8VfYjWJLAC2afPh0v",
+    "image": vedanshImg, // TODO: Add Vedansh's image file
     "quote": "Dreams can become a reality. You just have to keep chasing them",
     "socials": {
       "github": "https://github.com/Vedansh-Dwivedi",
@@ -102,7 +131,7 @@
     "name": "Anushka",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=15HOPE4BqcFJx5pYUZ3c_UVQLmWkHpZeg",
+    "image": anushkaImg,
     "quote": "Believe in your flyness, conquer your shyness. \u2014 Kanye West",
     "socials": {
       "github": "https://github.com/Anushka-XD",
@@ -116,7 +145,7 @@
     "name": "Shriya Singh",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1YNY3Z4JwcS4e_orOR4a1J0hYwfWHglo6",
+    "image": shriyaImg,
     "quote": "Turning complex flows into simple experiences.",
     "socials": {
       "github": "https://github.com/shriyasingh-dot",
@@ -130,7 +159,7 @@
     "name": "Naysha Dwivedi",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1GpgQguFj-NpODvhS0DTqF_A2wxIaqnBM",
+    "image": nayshaImg,
     "quote": "I make things work eventually",
     "socials": {
       "github": "https://github.com/lozakk",
@@ -139,13 +168,12 @@
       "discord": ""
     }
   },
-  
   {
     "id": 11,
     "name": "Anahita",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1Lykjq4dCLl8612oVLNgmlS2bP0YTGe95",
+    "image": anahitaImg,
     "quote": "\u201cBuilding skills and creating impact through technology.\u201d",
     "socials": {
       "github": "https://github.com/Anahita0706",
@@ -159,7 +187,7 @@
     "name": "Arushi",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1W_7whrcCkZvLWnmO2lq0i46R-YpjN3i2",
+    "image": arushiImg,
     "quote": "Motivated to learn and contribute",
     "socials": {
       "github": "https://github.com/arushibhutani2007-sudo",
@@ -173,7 +201,7 @@
     "name": "Isha Bhargava",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1KuWwWdQgzn6UeQe-0JqNTXJqrcJ9bocz",
+    "image": ishaImg,
     "quote": "Small steps, meaningful progress.",
     "socials": {
       "github": "https://github.com/ishaabhargava",
@@ -187,7 +215,7 @@
     "name": "Archi Singhal",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1gyOQ9jDCaRZZfPcdmx_8tMOS-0HdjCWC",
+    "image": archiImg,
     "quote": "Creating conversations around code.",
     "socials": {
       "github": "https://github.com/archi-s1",
@@ -201,7 +229,7 @@
     "name": "Anmol Bhatnagar",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1bkSZUsyaSoBc87d01nT9tW-8Mg-4joFu",
+    "image": anmolImg,
     "quote": "Think. Code. Impact.",
     "socials": {
       "github": "https://github.com/Anmol-OS",
@@ -215,7 +243,7 @@
     "name": "Vanisha Sharma",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1fVGXxSOZJRFXYkK3A8CKNEpAN2HotFo6",
+    "image": vanishaImg,
     "quote": "To \u267e\ufe0f and beyond \ud83d\udcab",
     "socials": {
       "github": "https://github.com/Vanzzz26",
@@ -229,7 +257,7 @@
     "name": "Satyam \ud83d\udd31",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1gFlWRd6xIGWv7vGtcK2-P_-hOMARDY6U",
+    "image": satyamImg,
     "quote": "Always learning, always building",
     "socials": {
       "github": "",
@@ -243,7 +271,7 @@
     "name": "SHIVAM SHISHODIA",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1PabwY-D4izqThnPxKMteUMAMT0mqYuVj",
+    "image": shivamImg,
     "quote": "I move in silence, let results speak",
     "socials": {
       "github": "https://github.com/ShivaayS20",
@@ -257,7 +285,7 @@
     "name": "Dhruvi Gupta",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1cISlpE9DwVRwwz4fWlNgHELObr3DU2nQ",
+    "image": dhruviImg,
     "quote": "Imagining Thing and Making it Real...",
     "socials": {
       "github": "https://github.com/DG-Dhruvi",
@@ -271,7 +299,7 @@
     "name": "Revant Srivastava",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1IP0hLu6RIYNAv_ftAlHhs8CCbdRgXsUZ",
+    "image": revantImg,
     "quote": "Good at delegating things i could do myself",
     "socials": {
       "github": "https://github.com/Revant-Srivastava",
@@ -285,7 +313,7 @@
     "name": "Hitika Mathur",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1RVxAnOM84cScGpl-DgfujNLIYefU-fPo",
+    "image": hitikaImg,
     "quote": "Crafting what\u2019s next",
     "socials": {
       "github": "https://github.com/hitikamathur",
@@ -299,7 +327,7 @@
     "name": "Abhinandan",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1x1SSe4zyhdghnRl20zmKGApdIrKT5-gI",
+    "image": abhinandanImg,
     "quote": "\u201cGrowing one commit at a time.\u201d",
     "socials": {
       "github": "https://github.com/abhii981",
@@ -313,7 +341,7 @@
     "name": "Pratishtha Singh",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1pFRSy6kokyiQk7tT-3H0JHtSZbTwR21M",
+    "image": pratishthaImg,
     "quote": "Code, Coffee, Repeat",
     "socials": {
       "github": "https://github.com/Pratishtha5",
@@ -327,7 +355,7 @@
     "name": "Tarushi Saxena",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1UEcFhpBooeGavd5_uuftFD6JwhxSakMv",
+    "image": tarushiImg,
     "quote": "Thinking in loops. Building at scale.",
     "socials": {
       "github": "https://github.com/Tarushi-Saxena",
@@ -341,7 +369,7 @@
     "name": "Dhruv Arora",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1atYt7bw-4cggqMAn8545X6IVNX3setom",
+    "image": dhruvImg,
     "quote": "It's all just a God's Plan",
     "socials": {
       "github": "https://github.com/DhruvArora0204",
@@ -352,16 +380,18 @@
   },
   {
     "id": 26,
-    "name": "Aman Gandotra",
+    "name": "Ansh Mahajan",
     "role": "Core Team",
     "category": "Core Team",
-    "image": "https://drive.google.com/open?id=1KTe7npU1Xh9GhWfapBau9mprb5i8eBcP",
-    "quote": "Quietly building something meaningful.",
+    "image": anshImg,
+    "quote": "Talk is cheap. Show me the code.",
     "socials": {
-      "github": "Github.com/amangandotra",
-      "linkedin": "LinkedIn.com/in/amangandotra",
-      "instagram": "Aman_26_01",
-      "discord": ""
+    "github": "https://github.com/Mercy036",
+    "linkedin": "https://www.linkedin.com/in/ansh-mahajan-46115a267/",
+    "instagram": "https://www.instagram.com/anshmahajan_03/",
+    "discord": ""
     }
   }
-]
+];
+
+export default coreData;

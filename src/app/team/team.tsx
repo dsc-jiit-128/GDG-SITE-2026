@@ -11,10 +11,9 @@ import {
 } from "@/src/components/ui/carousel";
 import { TextAnimate } from "@/src/components/ui/text-animate";
 
-
-import mentorsData from "./Mentors.json";
-import leadsData from "./TeamLead.json";
-import coreData from "./CoreTeam.json";
+import mentorsData from "./Mentors";
+import leadsData from "./TeamLead"; 
+import coreData from "./CoreTeam";
 
 type Category = "Mentors" | "Team Leads" | "Core Team";
 
@@ -23,7 +22,7 @@ interface TeamMember {
   name: string;
   role: string;
   category: string;
-  image: string;
+  image: string | any; 
   quote: string;
   socials: {
     instagram?: string;
@@ -32,6 +31,7 @@ interface TeamMember {
     discord?: string;
   };
 }
+
 function extractInstagramUsername(url: string): string {
   const regex = /instagram\.com\/([^/?]+)/i;
   const match = url.match(regex);
@@ -44,11 +44,16 @@ function extractGithubUsername(url: string): string {
   return match ? match[1] : url;
 }
 
+const getImageSrc = (image: string | any) => {
+  if (typeof image === 'string') return image;
+  return image?.src || '';
+};
 
 export default function Team() {
   const [api, setApi] = useState<any>(null);
   const [activeCategory, setActiveCategory] = useState<Category>("Team Leads");
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
+
   const categoryDataMap: Record<Category, TeamMember[]> = {
     "Mentors": mentorsData as unknown as TeamMember[],
     "Team Leads": leadsData as unknown as TeamMember[],
@@ -57,9 +62,25 @@ export default function Team() {
 
   const filteredMembers = categoryDataMap[activeCategory] || [];
 
+  // UPDATED useEffect to handle random selection for Core Team
   useEffect(() => {
     if (filteredMembers.length > 0) {
-      setSelectedMember(filteredMembers[0]);
+      if (activeCategory === "Core Team") {
+        // Find Shourya (ID 1) and Ansh (ID 26)
+        const candidates = filteredMembers.filter(m => m.id === 1 || m.id === 26);
+        
+        if (candidates.length > 0) {
+          // Randomly pick one of them
+          const randomMember = candidates[Math.floor(Math.random() * candidates.length)];
+          setSelectedMember(randomMember);
+        } else {
+          // Fallback if neither found
+          setSelectedMember(filteredMembers[0]);
+        }
+      } else {
+        // Default behavior for Mentors and Team Leads (First person)
+        setSelectedMember(filteredMembers[0]);
+      }
     } else {
       setSelectedMember(null);
     }
@@ -77,14 +98,15 @@ export default function Team() {
     };
   }, []);
 
-
-
   useEffect(() => {
-    if (api && filteredMembers.length > 0) {
-      api.scrollTo(0);
+    if (api && filteredMembers.length > 0 && selectedMember) {
+      // Find index of the randomly selected member to scroll carousel to them
+      const index = filteredMembers.findIndex(m => m.id === selectedMember.id);
+      if (index !== -1) {
+        api.scrollTo(index);
+      }
     }
-  }, [activeCategory, api]);
-
+  }, [activeCategory, api, selectedMember]); // Added selectedMember to dependency to sync carousel
 
   return (
     <div className="team-container">
@@ -99,7 +121,7 @@ export default function Team() {
           <div className="profile-image-container">
             <div className="gradient-ring"></div>
             <div className="profile-image-wrapper">
-              <img src={selectedMember.image} alt={selectedMember.name} />
+              <img src={getImageSrc(selectedMember.image)} alt={selectedMember.name} />
             </div>
           </div>
 
@@ -144,13 +166,6 @@ export default function Team() {
                   <span>{extractGithubUsername(selectedMember.socials.github)}</span>
                 </a>
               )}
-
-              {/* {selectedMember.socials.discord && (
-                <a href={`${selectedMember.socials.discord}`} className="social-item">
-                  <MessageSquare size={24} />
-                  <span>{selectedMember.socials.discord}</span>
-                </a>
-              )} */}
             </div>
           </div>
         </div>
@@ -192,9 +207,8 @@ export default function Team() {
                     const index = filteredMembers.findIndex(m => m.id === member.id);
                     api?.scrollTo(index);
                   }}
-
                 >
-                  <img src={member.image} alt={member.name} />
+                  <img src={getImageSrc(member.image)} alt={member.name} />
                 </div>
               </CarouselItem>
             ))}

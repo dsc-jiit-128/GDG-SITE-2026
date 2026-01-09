@@ -1,10 +1,19 @@
-[
+// 1. Import the images at the top
+import krrishImg from "./teamImages/TeamLead/IMG_0488 - Krrish Sehgal.webp";
+import aadhyaImg from "./teamImages/TeamLead/aadhya gupta - Aadhya Gupta.webp";
+import rohanImg from "./teamImages/TeamLead/323A0716 - Rohan Gupta.webp";
+import devanshiImg from "./teamImages/TeamLead/1000235939 - Devanshi Srivastava.webp";
+import ananyaImg from "./teamImages/TeamLead/Ananya Goel_Social media - Ananya Goel.webp";
+import armanImg from "./teamImages/TeamLead/Arman Gupta - Arman Gupta.webp";
+
+// 2. Assign the imported variables to the "image" property
+const teamData = [
   {
     "id": 1,
     "name": "Krrish Sehgal",
     "role": "Tech Coordinator",
     "category": "Team Leads",
-    "image": "https://drive.google.com/open?id=1xL1e5RAoazKkcdsTkfEWjlEkd4qhZ13P",
+    "image": krrishImg,
     "quote": "\u201cOnes and Zeroes, never disappoint\u201d",
     "socials": {
       "github": "https://github.com/krrish-sehgal",
@@ -18,7 +27,7 @@
     "name": "Aadhya Gupta",
     "role": "Management & PR",
     "category": "Team Leads",
-    "image": "https://drive.google.com/open?id=15TpzYiwfpWUyLGbexrM479DZyHhpNOJ1",
+    "image": aadhyaImg,
     "quote": "The secret to good management? Coffee, patience, and the ability to smile through chaos.",
     "socials": {
       "github": "https://github.com/aadhya04",
@@ -32,7 +41,7 @@
     "name": "Rohan Gupta",
     "role": "ML Lead",
     "category": "Team Leads",
-    "image": "https://drive.google.com/open?id=1DgvFLNLJmHn871zrky_ksTTx3wlFLTMC",
+    "image": rohanImg,
     "quote": "\u201cTurning data into decisions, and ideas into intelligence.\u201d",
     "socials": {
       "github": "https://github.com/Rohannnn26",
@@ -46,7 +55,7 @@
     "name": "Devanshi Srivastava",
     "role": "UI/UX Lead",
     "category": "Team Leads",
-    "image": "https://drive.google.com/open?id=1JHho1zZcMe4VVy_S4T2aLcUhT2WD8Bzd",
+    "image": devanshiImg,
     "quote": "let\u2019s talk design",
     "socials": {
       "github": "https://github.com/Day-waah",
@@ -60,7 +69,7 @@
     "name": "Ananya Goel",
     "role": "Social Media Lead",
     "category": "Team Leads",
-    "image": "https://drive.google.com/open?id=1jk6b-AZVDXt09RCj1m-THYdOcJUX-1oN",
+    "image": ananyaImg,
     "quote": "Clarity over complexity",
     "socials": {
       "github": "https://github.com/Ananyag19",
@@ -74,7 +83,7 @@
     "name": "Arman Gupta",
     "role": "Management & PR",
     "category": "Team Leads",
-    "image": "https://drive.google.com/open?id=1U5HEbxO0SaIJ8iyWO1eI8nX954yhMoif",
+    "image": armanImg,
     "quote": "Code, Create, Conquer \u2013 because every great innovation starts with a single line.",
     "socials": {
       "github": "https://github.com/armangupta18",
@@ -83,4 +92,6 @@
       "discord": "https://discord.com/users/armangupta11"
     }
   }
-]
+];
+
+export default teamData;
