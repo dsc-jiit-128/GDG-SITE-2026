@@ -6,6 +6,7 @@ import ananyaImg from "./teamImages/TeamLead/Ananya Goel_Social media - Ananya G
 import armanImg from "./teamImages/TeamLead/Arman Gupta - Arman Gupta.webp";
 import vaibhavImg from "./teamImages/TeamLead/VaibhavPhoto.jpg";
 import himanshuImg from "./teamImages/TeamLead/Himanshu.webp";
+import divyanshImg from "./teamImages/TeamLead/divyanshSingh.webp"
 
 const teamData = [
   {
@@ -106,9 +107,23 @@ const teamData = [
       "discord": "https://discord.com/users/armangupta11"
     }
   },
-  
   {
     "id": 8,
+    "name": "Divyansh Singh",
+    "role": "UI/UX Lead",
+    "category": "Team Leads",
+    "image": divyanshImg,
+    "quote": "Innovation is a proactive vision that separates leaders from followers.",
+    "socials": {
+      "github": "https://github.com/Divgithub045",
+      "linkedin": "https://www.linkedin.com/in/divyanshsinghnrj",
+      "instagram": "https://www.instagram.com/singh_div_45/",
+      "discord": ""
+    }
+  },
+
+  {
+    "id": 9,
     "name": "Himanshu Singh",
     "role": "Web Dev Lead",
     "category": "Team Leads",
