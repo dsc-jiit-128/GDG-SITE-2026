@@ -157,7 +157,18 @@ export default function Team() {
             </h2>
 
             <p className="profile-quote">
-              {selectedMember.quote}
+              <TextAnimate
+                as="span"
+                key={`${selectedMember.id}-quote`}
+                by="word"
+                animation="blurInUp"
+                duration={0.5}
+                delay={0}
+                once={false}
+              >
+
+                {selectedMember.quote}
+                </TextAnimate>
             </p>
 
             <div className="social-links">
