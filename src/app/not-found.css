@@ -135,11 +135,16 @@
     width: 75%;
     padding: 25px 25px;
   }
+  .btn-secondary-demo-dashboard
+  {
+    width: fit-content;
+    margin: 0 auto;
+  }
 }
 @media(max-width:360px)
 {
   .not-found-footer-pill {
-    margin-bottom:-2.75rem;
+    margin-bottom:-1.5rem;
     width: 75%;
     padding: 15px 15px;
   }

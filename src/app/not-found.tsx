@@ -44,7 +44,7 @@ const NotFound = () => {
           >
             Return To Base
           </a>
-          <button onClick={() => router.back()} className="btn-secondary-demo-dashboard"
+          {/* <button onClick={() => router.back()} className="btn-secondary-demo-dashboard"
             style={{
               border: "1px solid var(--border)",
               padding: "0.8rem 2rem",
@@ -53,8 +53,8 @@ const NotFound = () => {
               textDecoration: "none",
               backgroundColor:"var(--bg-main)"
             }}>
-            Study Jams
-          </button>
+              Go back
+          </button> */}
         </div>
       </div>
 
