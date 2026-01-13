@@ -31,13 +31,13 @@ export const MacbookScroll = ({
   showGradient,
   title,
   badge,
-  screenContent, // New Prop
+  screenContent,
 }: {
   src?: string;
   showGradient?: boolean;
   title?: string | React.ReactNode;
   badge?: React.ReactNode;
-  screenContent?: React.ReactNode; // New Prop
+  screenContent?: React.ReactNode;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -63,10 +63,28 @@ export const MacbookScroll = ({
     [0, 0.3],
     [0.6, isMobile ? 1 : 1.5],
   );
+  
+  // Base translation for the laptop lid opening
   const translate = useTransform(scrollYProgress, [0, 1], [0, 1500]);
   const rotate = useTransform(scrollYProgress, [0.1, 0.12, 0.3], [-28, -28, 0]);
   const textTransform = useTransform(scrollYProgress, [0, 0.3], [0, 100]);
   const textOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+
+  // --- POP OUT LOGIC ---
+  // 1. Scale: The screen grows significantly after detaching (0.3 scroll point)
+  const contentScale = useTransform(scrollYProgress, [0.3, 0.9], [1, 3]); 
+  
+  // 2. Y-Offset: Additional movement to center the screen as it pops out
+  const contentTranslate = useTransform(scrollYProgress, [0.3, 0.9], [0, 500]); 
+
+  // 3. Merge translations: Keep attached initially (translate), then detach (contentTranslate)
+  const finalY = useTransform(
+    [translate, contentTranslate],
+    ([t, c]) => t + c
+  );
+
+  // 4. Opacity: Fade out near the end so it doesn't block the next section
+  const contentOpacity = useTransform(scrollYProgress, [0.8, 0.95], [1, 0]);
 
   return (
     <div
@@ -90,11 +108,14 @@ export const MacbookScroll = ({
       {/* Lid */}
       <Lid
         src={src}
-        screenContent={screenContent} // Pass it down
+        screenContent={screenContent}
         scaleX={scaleX}
         scaleY={scaleY}
         rotate={rotate}
-        translate={translate}
+        // Pass the new merged transforms
+        translate={finalY}
+        contentScale={contentScale}
+        contentOpacity={contentOpacity}
       />
       
       {/* Base area */}
@@ -136,6 +157,8 @@ export const Lid = ({
   translate,
   src,
   screenContent,
+  contentScale,
+  contentOpacity,
 }: {
   scaleX: MotionValue<number>;
   scaleY: MotionValue<number>;
@@ -143,6 +166,8 @@ export const Lid = ({
   translate: MotionValue<number>;
   src?: string;
   screenContent?: React.ReactNode;
+  contentScale?: MotionValue<number>;
+  contentOpacity?: MotionValue<number>;
 }) => {
   return (
     <div className="macbook-scroll-component-lid-container">
@@ -160,23 +185,26 @@ export const Lid = ({
           </span>
         </div>
       </div>
+      
+      {/* The Screen Component itself now moves, scales, AND fades */}
       <motion.div
         style={{
           scaleX: scaleX,
           scaleY: scaleY,
           rotateX: rotate,
-          translateY: translate,
+          y: translate,   // Combined Y translation
+          scale: contentScale, // Pop-out scale
+          opacity: contentOpacity, // FADE OUT LOGIC ADDED HERE
           transformStyle: "preserve-3d",
           transformOrigin: "top",
         }}
         className="macbook-scroll-component-screen"
       >
         <div className="macbook-scroll-component-screen-inner" />
-        {/* Logic: Render Custom Content if provided, else render Image */}
+        
         {screenContent ? (
-           // FIXED: Removed rounded-lg and gray background. Used black to blend with bezel.
-           <div className="absolute inset-0 h-full w-full overflow-hidden bg-[#010101]">
-             {screenContent}
+           <div className="absolute inset-0 h-full w-full bg-[#010101] flex items-center justify-center">
+              {screenContent}
            </div>
         ) : (
           <img
