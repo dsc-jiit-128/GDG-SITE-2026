@@ -1,6 +1,6 @@
 import type { Metadata } from "next"; 
-import Navbar from "@/src/component/Navbar";
-import Footer from "@/src/component/Footer";
+import Navbar from "@/src/components/Navbar";
+import Footer from "@/src/components/Footer";
 
 export const metadata: Metadata = {
   title: "GDG Team | Meet the Builders",
@@ -14,11 +14,9 @@ export default function TeamsLayout({
 }>) {
   return (
     <section className="teams-layout">
-      <Navbar /> 
       <main className="min-h-screen pt-20">
         {children}
       </main>
-
     </section>
   );
 }

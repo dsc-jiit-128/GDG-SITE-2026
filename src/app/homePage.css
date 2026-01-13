@@ -69,9 +69,11 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 8rem 1.5rem 0; /* Increased top padding from 0 to 8rem */
+  padding: 8rem 1.5rem 0; 
   margin-bottom: -2rem;
   position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .hero-title {
@@ -166,6 +168,8 @@ body {
   pointer-events: none;
   transition: opacity 1.5s ease-out, transform 1.5s ease-out;
   filter: drop-shadow(0 0 15px rgba(217, 164, 65, 0.2)) brightness(0.6);
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .hero-background-logo.visible {
@@ -183,7 +187,7 @@ body {
   }
 }
 .hero {
-  position: relative; /* Container for the absolute logo */
+  position: relative; 
 }
 .hero-badge {
   background-color: var(--accent-soft);
@@ -238,7 +242,6 @@ body {
 .btn-primary:hover {
   transform: scale(1.05);
 }
-/* Individual Shape Component using CSS only */
 .shape-decoration {
   position: fixed;
   z-index: -2;
@@ -246,18 +249,17 @@ body {
   height: 60px;
   background-color: transparent;
   border: 4px solid var(--accent);
-  border-radius: 999px; /* Pill shape */
+  border-radius: 999px;
   opacity: 0.04;
   pointer-events: none;
   filter: blur(1px) drop-shadow(0 0 15px var(--accent));
   animation: floating-shape 10s ease-in-out infinite alternate;
 }
 
-/* Creating the "V" or "Bracket" look using pseudo-elements */
 .shape-decoration::after {
   content: '';
   position: absolute;
-  top: 45px; /* Adjust based on overlap preference */
+  top: 45px;
   left: 0;
   width: 180px;
   height: 60px;
@@ -267,7 +269,6 @@ body {
   transform-origin: left center;
 }
 
-/* Individual Positions */
 .shape-1 {
   top: 10%;
   left: 5%;
@@ -372,26 +373,122 @@ body {
   text-align: center;
 }
 
-.events-grid {
+.homepage-events-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Force 2 columns */
+  grid-template-columns: 1fr 1fr; 
   gap: 2rem;
   margin-top: 4rem;
 }
 
-@media (max-width: 768px) {
-  .content-wrapper {
-    grid-template-columns: 1fr;
-    text-align: center;
+@media (max-width: 1200px) {
+  .hero-badge{
+    margin-top: 3rem;
   }
-  
-  .mini-card {
-    text-align: left;
+  .hero-title {
+    font-size: 3.2rem;
+  }
+  .section-label{
+    margin-top: 4rem;
+  }
+  .features-container,
+  .what-do-we-do,
+  .events-section {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
+@media (max-width: 992px) {
+  .hero {
+    padding-top: 6rem;
+    min-height: 70vh;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-subtext {
+    font-size: 1.05rem;
+  }
+
+  .features-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .homepage-events-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 @media (max-width: 768px) {
-  .hero-title { font-size: 2.5rem; }
-  .features-container { flex-direction: column; }
+  .hero-title {
+    font-size: 2.4rem;
+    line-height: 1.2;
+  }
+
+  .hero-subtext {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .what-do-we-do,
+  .features-section,
+  .events-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .text-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .text-content p {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 5rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtext {
+    font-size: 0.95rem;
+  }
+
+  .hero-background-logo {
+    width: 420px;
+  }
+
+  .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-stats {
+    gap: 1.5rem;
+  }
+
+  .stat-value {
+    font-size: 1.6rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+  }
 }
