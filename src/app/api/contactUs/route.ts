@@ -5,11 +5,10 @@ import { ContactSchemaZod } from "@/src/validation/contactUsForm.validation";
 import dbConnect from "@/src/lib/dbConnect";
 import { ContactModel } from "@/src/model/contactFormModel";
 
-const resend = new Resend(process.env.RESEND_API_KEY!);
-
 export async function POST(req: Request) {
   try {
     await dbConnect();
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     const body = await req.json();
     const parsed = ContactSchemaZod.safeParse(body);
@@ -45,7 +44,7 @@ export async function POST(req: Request) {
       { status: 201 }
     );
 
-  } catch {
+  } catch (error) {
     return NextResponse.json(
       { error: "Internal Server Error" },
       { status: 500 }
