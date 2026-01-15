@@ -277,7 +277,7 @@ export default function Team() {
           </CarouselContent>
 
           <CarouselPrevious className="custom-carousel-btn flex -left-12" />
-          <CarouselNext className="custom-carousel-btn flex -right-12" />
+          <CarouselNext className="custom-carousel-btn flex -right-30" />
         </Carousel>
       </div>
     </div>
