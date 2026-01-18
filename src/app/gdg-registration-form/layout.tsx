@@ -1,11 +1,10 @@
-import { Particles } from "@/src/components/ui/particles";
 import type { Metadata } from "next"; 
 
 // import "./bitboxPage.css"
 
 export const metadata: Metadata = {
-  title: "BITBOX 6.0",
-  description: "Flagship And Most Anticipated Hackathon Of GDG JIIT",
+  title: "GDG | Register",
+  description: "Register and become a part of the most prestigious club of JIIT",
 };
 
 export default function RegisterLayout({
@@ -14,8 +13,8 @@ export default function RegisterLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <section className="teams-layout relative min-h-screen bg-black">
-      <main className="relative z-10 min-h-screen pt-20">
+    <section className="teams-layout">
+      <main className="min-h-screen pt-20">
         {children}
       </main>
     </section>
