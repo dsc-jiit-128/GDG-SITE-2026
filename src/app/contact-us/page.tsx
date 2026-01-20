@@ -104,6 +104,8 @@ export default function ContactUs() {
                             />
                         </div>
 
+                        {/* add captacha google here and remove this commit after */}
+
                         <motion.button
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
