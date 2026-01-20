@@ -3,7 +3,6 @@
 import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { TimeLineDetails } from "./Timeline";
-import { RoadmapBackground } from "@/src/components/ui/RoadmapBackground";
 import { RoadmapStep } from "@/src/components/ui/RoadmapStep";
 import "./bitbox-timeline.css";
 import { RoadmapOverlay } from "@/src/components/ui/RoadmapOverlay";
@@ -37,12 +36,8 @@ export default function BitBoxPage() {
 
   return (
     <div ref={containerRef} className="roadmap-page-root">
-      <RoadmapBackground
-        backgroundColor={backgroundColor}
-        activeRange={activeId >= 0 && activeId <= 0}
-      />
 
-      <RoadmapOverlay activeRange={activeId >= 2 && activeId <= 9} />
+      <RoadmapOverlay activeRange={activeId >= 0 && activeId <= 9} />
 
       <header className="roadmap-header">
         <motion.h2

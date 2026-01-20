@@ -92,12 +92,12 @@ export default function HomePage() {
       <div 
         className="fixed z-[60] cursor-pointer 
                     right-6 md:top-7.5 md:right-10 
-                   bottom-6 md:bottom-auto"
+                   bottom-10 md:bottom-auto"
         onClick={() => {
           setShowToast(!showToast);
         }}
       >
-        <div className="relative p-5.5 bg-white/5 backdrop-blur-md rounded-full border border-white/10 hover:bg-white/10 transition-colors">
+        <div className="relative p-4.5 md:p-5.5 bg-white/5 backdrop-blur-md rounded-full border border-white/10 hover:bg-white/10 transition-colors">
           <Bell className="text-white w-6 h-6" />
           {hasNotification && (
             <span className="absolute top-3 right-4 flex h-3 w-3">
