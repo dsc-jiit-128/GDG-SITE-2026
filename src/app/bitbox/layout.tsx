@@ -4,8 +4,8 @@ import type { Metadata } from "next";
 import "./bitboxPage.css"
 
 export const metadata: Metadata = {
-  title: "GDG Team | Meet the Builders",
-  description: "Meet the Mentors, Team Leads, and Core Team behind GDG.",
+  title: "BITBOX 6.0",
+  description: "Flagship And Most Anticipated Hackathon Of GDG JIIT",
 };
 
 export default function BitboxLayout({
