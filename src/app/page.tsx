@@ -116,14 +116,14 @@ export default function HomePage() {
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             className="fixed z-50 
                        bottom-27 right-10 md:bottom-auto md:top-27.5 md:right-10 
-                       min-[400px]:left-35  -translate-x-1/2 md:left-auto md:translate-x-0 max-[400px]:left-29"
+                       min-[400px]:left-35  -translate-x-1/2 md:left-auto md:translate-x-0 max-[400px]:left-27"
           >
             <div className="relative group cursor-pointer" onClick={() => router.push("/bitbox")}>
                 {/* <div className="absolute top-4 -right-27 z-10 bg-white/10 backdrop-blur-lg rounded-full p-1 border border-white/20 hover:bg-white/20" 
                      onClick={(e) => { e.stopPropagation(); setShowToast(false); }}>
                     <XCircle className="w-5 h-5 text-white/70" />
                 </div> */}
-                <div className="min-[400px]:scale-85 scale-75 md:scale-100 origin-bottom md:origin-top-right">
+                <div className="min-[400px]:scale-95 scale-80 md:scale-100 origin-bottom md:origin-top-right">
                     <BitBoxComingSoon />
                 </div>
             </div>
