@@ -98,10 +98,6 @@ export default function BitBoxPage() {
           <BentoComponent />
         </div>
       </div>
-
-      {/* SPONSORS SECTION */}
-      <Sponsors />
-
       <div className="w-[80%] flex flex-col items-center justify-center mt-[100px] mb-[100px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -132,11 +128,16 @@ export default function BitBoxPage() {
           </h2>
           <div className="h-1 w-20 bg-white/20 mx-auto mt-4 rounded-full" />
         </motion.div>
-        
+
         <div className="w-[120%] md:w-[80%] lg:w-[70%] px-4 md:px-0 ">
           <SpeakerGrid />
         </div>
       </div>
+
+      {/* SPONSORS SECTION */}
+      <Sponsors />
+
+
     </div>
   );
 }

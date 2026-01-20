@@ -40,7 +40,6 @@ const Footer: React.FC = () => {
               <li><Link href="/events">Events</Link></li>
               <li><Link href="/team">Team</ Link></li>
               <li><Link href="/bitbox">Bitbox</Link></li>
-              <li><Link href="/studyjam">StudyJam</Link></li>
               <li><Link href="/contact-us">Contact Us</Link></li>
             </ul>
           </div>

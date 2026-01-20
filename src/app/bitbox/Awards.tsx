@@ -17,7 +17,7 @@ export type AwardsType={
 export const AwardsData:AwardsType[] = [
   {
     name: "1st Prize",
-    description: "20,000 Cash Prize and Goodies!",
+    description: "XX,XXX Cash Prize and Goodies!",
     icon: <Trophy className="w-6 h-6 text-[#d9a441]" />,
     img: "/1stTrophy.webp",
     className: "md:col-span-1 md:row-span-2",
@@ -27,7 +27,7 @@ export const AwardsData:AwardsType[] = [
   },
   {
     name: "2nd Prize",
-    description: "10,000 Cash Prize and Goodies!",
+    description: "XX,XXX Cash Prize and Goodies!",
     icon: <Award className="w-6 h-6 text-[#C0C0C0]" />,
     img: "/2ndTrophy.webp",
     className: "md:col-span-1 md:row-span-1",
@@ -37,7 +37,7 @@ export const AwardsData:AwardsType[] = [
   },
   {
     name: "3rd Prize",
-    description: "5,000 Cash Prize and Goodies!",
+    description: "XX,XXX Cash Prize and Goodies!",
     icon: <Medal className="w-6 h-6 text-[#CD7F32]" />,
     img: "/3rdTrophy.webp",
     className: "md:col-span-1 md:row-span-1",
