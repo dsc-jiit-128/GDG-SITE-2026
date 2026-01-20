@@ -21,7 +21,7 @@ export const AwardsData:AwardsType[] = [
     icon: <Trophy className="w-6 h-6 text-[#d9a441]" />,
     img: "/1stTrophy.webp",
     className: "md:col-span-1 md:row-span-2",
-    borderColor: "border-[#d9a441]/20 hover:border-[#d9a441]/50",
+    borderColor: "border border-[#d9a441]/20 hover:border-[#d9a441]/50",
     glowStyles: "group-hover:shadow-[0_0_50px_-12px_rgba(217,164,65,0.3)]",
     ambientColor: "from-[#d9a441]/10",
   },
