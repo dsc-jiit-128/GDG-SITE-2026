@@ -133,8 +133,6 @@ export default function BitBoxPage() {
           <SpeakerGrid />
         </div>
       </div>
-
-      {/* SPONSORS SECTION */}
       <Sponsors />
 
 
