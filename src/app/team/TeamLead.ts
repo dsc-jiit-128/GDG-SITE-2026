@@ -22,7 +22,8 @@ const teamData = [
       "github": "https://github.com/VaibhavKatariya",
       "linkedin": "https://www.linkedin.com/in/vaibhavkatariyaa",
       "instagram": "https://www.instagram.com/acevaibhav/",
-      "discord": "https://discord.com/users/vaibhavkatariyaa"
+      "discord": "https://discord.com/users/vaibhavkatariyaa",
+      "website": "https://www.kaily.in"
     }
   },
   {

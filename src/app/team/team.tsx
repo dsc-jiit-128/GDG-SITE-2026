@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import "./team.css";
-import { Instagram, Linkedin, Github } from "lucide-react";
+import { Instagram, Linkedin, Github, Globe } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -30,6 +30,7 @@ interface TeamMember {
     linkedin?: string;
     github?: string;
     discord?: string;
+    website?: string;
   };
 }
 
@@ -46,8 +47,8 @@ function extractGithubUsername(url: string): string {
 }
 
 const getImageSrc = (image: string | any) => {
-  if (typeof image === 'string') return image;
-  return image?.src || '';
+  if (typeof image === "string") return image;
+  return image?.src || "";
 };
 
 export default function Team() {
@@ -71,7 +72,7 @@ export default function Team() {
   }, []);
 
   const categoryDataMap: Record<Category, TeamMember[]> = {
-    "Mentors": mentorsData as unknown as TeamMember[],
+    Mentors: mentorsData as unknown as TeamMember[],
     "Team Leads": leadsData as unknown as TeamMember[],
     "Core Team": coreData as unknown as TeamMember[],
   };
@@ -80,10 +81,13 @@ export default function Team() {
   useEffect(() => {
     if (filteredMembers.length > 0) {
       if (activeCategory === "Core Team") {
-        const candidates = filteredMembers.filter(m => m.id === 1 || m.id === 26);
+        const candidates = filteredMembers.filter(
+          (m) => m.id === 1 || m.id === 26,
+        );
 
         if (candidates.length > 0) {
-          const randomMember = candidates[Math.floor(Math.random() * candidates.length)];
+          const randomMember =
+            candidates[Math.floor(Math.random() * candidates.length)];
           setSelectedMember(randomMember);
         } else {
           setSelectedMember(filteredMembers[0]);
@@ -96,17 +100,16 @@ export default function Team() {
     }
   }, [activeCategory]);
 
-
   useEffect(() => {
     let loaded = 0;
-    const images = filteredMembers.map(m => getImageSrc(m.image));
+    const images = filteredMembers.map((m) => getImageSrc(m.image));
 
     if (images.length === 0) {
       setIsLoading(false);
       return;
     }
 
-    images.forEach(src => {
+    images.forEach((src) => {
       const img = new Image();
       img.src = src;
       img.onload = img.onerror = () => {
@@ -117,7 +120,6 @@ export default function Team() {
       };
     });
   }, [filteredMembers]);
-
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -133,7 +135,9 @@ export default function Team() {
 
   useEffect(() => {
     if (api && filteredMembers.length > 0 && selectedMember) {
-      const index = filteredMembers.findIndex(m => m.id === selectedMember.id);
+      const index = filteredMembers.findIndex(
+        (m) => m.id === selectedMember.id,
+      );
       if (index !== -1) {
         api.scrollTo(index);
       }
@@ -152,8 +156,10 @@ export default function Team() {
   return (
     <div className="team-container">
       <div className="text-center mb-8">
-        <h1 style={{ fontSize: '1.5rem', color: '#fff', fontWeight: 600 }}></h1>
-        <p style={{ color: '#a1a1a1', fontSize: '1rem', marginTop: '0.5rem' }}></p>
+        <h1 style={{ fontSize: "1.5rem", color: "#fff", fontWeight: 600 }}></h1>
+        <p
+          style={{ color: "#a1a1a1", fontSize: "1rem", marginTop: "0.5rem" }}
+        ></p>
       </div>
 
       {selectedMember && (
@@ -161,12 +167,15 @@ export default function Team() {
           <div className="profile-image-container">
             <div className="gradient-ring"></div>
             <div className="profile-image-wrapper">
-              <img src={getImageSrc(selectedMember.image)} alt={selectedMember.name} />
+              <img
+                src={getImageSrc(selectedMember.image)}
+                alt={selectedMember.name}
+              />
             </div>
           </div>
 
           <div className="profile-info">
-            <div className={`role-badge fade-up${fade ? ' visible' : ''}`}>
+            <div className={`role-badge fade-up${fade ? " visible" : ""}`}>
               {selectedMember.role}
             </div>
             <h2 className="profile-title">
@@ -184,7 +193,6 @@ export default function Team() {
                 delay={0}
                 once={false}
               >
-
                 {selectedMember.quote}
               </TextAnimate>
             </p>
@@ -197,7 +205,9 @@ export default function Team() {
                   className="social-item"
                 >
                   <Instagram size={24} />
-                  <span>{extractInstagramUsername(selectedMember.socials.instagram)}</span>
+                  <span>
+                    {extractInstagramUsername(selectedMember.socials.instagram)}
+                  </span>
                 </a>
               )}
 
@@ -219,7 +229,22 @@ export default function Team() {
                   className="social-item"
                 >
                   <Github size={24} />
-                  <span>{extractGithubUsername(selectedMember.socials.github)}</span>
+                  <span>
+                    {extractGithubUsername(selectedMember.socials.github)}
+                  </span>
+                </a>
+              )}
+
+              {selectedMember.socials.website && (
+                <a
+                  href={selectedMember.socials.website}
+                  target="_blank"
+                  className="social-item"
+                >
+                  <Globe size={24} />
+                  <span>
+                    Portfolio
+                  </span>
                 </a>
               )}
             </div>
@@ -252,7 +277,6 @@ export default function Team() {
           }}
           className="w-full team-carousel"
         >
-
           <CarouselContent className="-ml-4 py-10">
             {filteredMembers.map((member) => (
               <CarouselItem
@@ -260,12 +284,13 @@ export default function Team() {
                 className="pl-4 basis-1/4 md:basis-1/5 lg:basis-1/6 flex justify-center items-center"
               >
                 <div
-                  className={`carousel-avatar-btn ${selectedMember?.id === member.id ? "selected" : ""
-                    }`}
+                  className={`carousel-avatar-btn ${
+                    selectedMember?.id === member.id ? "selected" : ""
+                  }`}
                   onClick={() => {
                     setSelectedMember(member);
                     const index = filteredMembers.findIndex(
-                      (m) => m.id === member.id
+                      (m) => m.id === member.id,
                     );
                     api?.scrollTo(index);
                   }}
@@ -281,5 +306,5 @@ export default function Team() {
         </Carousel>
       </div>
     </div>
-  )
+  );
 }
