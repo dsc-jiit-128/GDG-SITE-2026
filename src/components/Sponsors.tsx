@@ -81,7 +81,7 @@ const SponsorCard = ({ item, className = "", borderColor = "border-white/10", gl
             <div className="flex h-full w-full items-center justify-center rounded-xl bg-white p-6 shadow-xl transition-all duration-300 group-hover:shadow-2xl group-hover:scale-105">
               <img
                 src={item.logo}
-                alt={"DEVFOLIO LOGO"}
+                alt={item.name}
                 className="max-h-full max-w-full object-contain"
               />
             </div>
@@ -218,6 +218,11 @@ export default function Sponsors() {
           </div>
         </div>
       </div>
+
+      <div>
+        <img src="../public/dev_Dark.png" alt="DEVFOLIO Logo" />
+      </div>
+
     </div>
   );
 }
