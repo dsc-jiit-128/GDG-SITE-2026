@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { TimeLineDetails } from "./Timeline";
 import { RoadmapStep } from "@/src/components/ui/RoadmapStep";
@@ -12,6 +12,7 @@ import MiniGamesCard from "@/src/components/MiniGamesCard";
 import { mockGames } from "./MiniGameCardDetails";
 import SpeakerGrid from "@/src/components/SpeakerCard";
 import Sponsors from "@/src/components/Sponsors"; // <--- Import the new component
+import DevfolioButton from "./Devfoliobtn";
 
 export default function BitBoxPage() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -25,18 +26,18 @@ export default function BitBoxPage() {
   const backgroundColor = useTransform(
     scrollYProgress,
     [0, 0.4, 0.7, 1],
-    ["#000000", "#121212", "#0a0a0a", "#000000"]
+    ["#000000", "#121212", "#0a0a0a", "#000000"],
   );
 
   const scaleY = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
-    restDelta: 0.001
+    restDelta: 0.001,
   });
+  
 
   return (
     <div ref={containerRef} className="roadmap-page-root">
-
       <RoadmapOverlay activeRange={activeId >= 0 && activeId <= 9} />
 
       <header className="roadmap-header">
@@ -52,7 +53,10 @@ export default function BitBoxPage() {
           whileInView={{ opacity: 1, scale: 1 }}
           className="roadmap-title"
         >
-          BitBox <AuroraText><span className="roadmap-title-muted">6.0</span></AuroraText>
+          BitBox{" "}
+          <AuroraText>
+            <span className="roadmap-title-muted">6.0</span>
+          </AuroraText>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }}
@@ -62,6 +66,7 @@ export default function BitBoxPage() {
         >
           Simplicity is the ultimate sophistication.
         </motion.p>
+       <DevfolioButton/>
       </header>
 
       <div className="roadmap-timeline-spine">
@@ -71,7 +76,7 @@ export default function BitBoxPage() {
           style={{ scaleY, originY: 0 }}
         />
 
-        {TimeLineDetails.filter(item => item.id !== 1).map((item, index) => (
+        {TimeLineDetails.filter((item) => item.id !== 1).map((item, index) => (
           <RoadmapStep
             key={item.id}
             item={item}
@@ -134,8 +139,6 @@ export default function BitBoxPage() {
         </div>
       </div>
       <Sponsors />
-
-
     </div>
   );
 }
