@@ -89,7 +89,7 @@ const SponsorCard = ({ item, className = "", borderColor = "border-white/10", gl
             <div className="relative flex h-full w-full items-center justify-center">
               <img
                 src={item.logo}
-                alt={item.name}
+                alt={"DEVFOLIO LOGO"}
                 className="max-h-full max-w-full object-contain opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:scale-110 group-hover:grayscale-0"
               />
             </div>
