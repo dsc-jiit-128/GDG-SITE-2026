@@ -148,14 +148,14 @@ const teamData = [
     "socials": {
       "github": "https://github.com/aditikansal01",
       "linkedin": "https://www.linkedin.com/in/aditi-kansal-37b09a314/",
-      "instagram": "https://www.instagram.com/aditikansal_01/",
+      "instagram": "https://www.instagram.com/aditikansal_/",
       "discord": "aditi"
     }
   },
   {
     "id": 11,
     "name": "Shaurya Rahlon",
-    "role": "Cloud and DevOps Lead",
+    "role": "Cloud Lead",
     "category": "Team Leads",
     "image": shauryaImg,
     "quote": "There are no traffic jams in the extra mile",
