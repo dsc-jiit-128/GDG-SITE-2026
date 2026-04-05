@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { GlowingEffect } from "@/src/components/ui/glowing-effect";
 import { AuroraText } from "@/src/components/ui/aurora-text";
@@ -41,8 +41,14 @@ const sponsors = {
   ],
 };
 
-const SponsorCard = ({ item, className = "", borderColor = "border-white/10", glowStyles = "", ambientColor = "rgba(255,255,255,0.05)" }: { 
-  item: any; 
+const SponsorCard = ({
+  item,
+  className = "",
+  borderColor = "border-white/10",
+  glowStyles = "",
+  ambientColor = "rgba(255,255,255,0.05)",
+}: {
+  item: any;
   className?: string;
   borderColor?: string;
   glowStyles?: string;
@@ -55,9 +61,9 @@ const SponsorCard = ({ item, className = "", borderColor = "border-white/10", gl
       rel="noopener noreferrer"
       className={`group relative block h-full w-full ${className}`}
     >
-      <div className={`relative h-full w-full overflow-hidden rounded-[40px] border bg-[rgba(15,15,15,0.4)] backdrop-blur-[25px] saturate-150 transition-all duration-500 hover:scale-[1.02] ${borderColor} ${glowStyles}`}>
-        
-        {/* Glowing Effect */}
+      <div
+        className={`relative h-full w-full overflow-hidden rounded-[40px] border bg-[rgba(15,15,15,0.4)] backdrop-blur-[25px] saturate-150 transition-all duration-500 hover:scale-[1.02] ${borderColor} ${glowStyles}`}
+      >
         <GlowingEffect
           spread={50}
           glow={true}
@@ -67,15 +73,13 @@ const SponsorCard = ({ item, className = "", borderColor = "border-white/10", gl
           borderWidth={2}
         />
 
-        {/* Ambient Background Glow */}
         <div
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-          style={{ 
-            backgroundImage: `linear-gradient(${ambientColor}, transparent)` 
+          style={{
+            backgroundImage: `linear-gradient(${ambientColor}, transparent)`,
           }}
         />
 
-        {/* Inner Content */}
         <div className="relative z-10 flex h-full w-full items-center justify-center p-8">
           {item.bgWhite ? (
             <div className="flex h-full w-full items-center justify-center rounded-xl bg-white p-6 shadow-xl transition-all duration-300 group-hover:shadow-2xl group-hover:scale-105">
@@ -96,7 +100,6 @@ const SponsorCard = ({ item, className = "", borderColor = "border-white/10", gl
           )}
         </div>
 
-        {/* Subtle Top-Left Shine */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
       </div>
     </a>
@@ -104,6 +107,18 @@ const SponsorCard = ({ item, className = "", borderColor = "border-white/10", gl
 };
 
 export default function Sponsors() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://apply.devfolio.co/v2/sdk.js";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="w-[80%] flex flex-col items-center justify-center mt-[150px] mb-[100px]">
       
@@ -120,18 +135,29 @@ export default function Sponsors() {
           </h2>
           <div className="h-1 w-20 bg-white/20 mx-auto mt-4 rounded-full" />
         </motion.div>
-        
+
         <div className="w-full max-w-md md:max-w-lg">
-          <SponsorCard 
-            item={sponsors.title[0]} 
-            className="h-64 md:h-72" 
+          <SponsorCard
+            item={sponsors.title[0]}
+            className="h-64 md:h-72"
             borderColor="border-purple-500/20 hover:border-purple-500/50"
             glowStyles="hover:shadow-[0_0_50px_-12px_rgba(168,85,247,0.3)]"
             ambientColor="rgba(168,85,247,0.1)"
           />
         </div>
+
+        {/* Devfolio Apply Button */}
+        <div className="flex justify-center mt-10">
+          <div
+            className="apply-button"
+            data-hackathon-slug="bitbox6-0"
+            data-button-theme="dark"
+            style={{ height: "44px", width: "312px" }}
+          ></div>
+        </div>
       </div>
 
+      {/* Powered By */}
       <div className="w-full flex flex-col items-center mb-[100px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -144,13 +170,13 @@ export default function Sponsors() {
           </h3>
           <div className="h-1 w-20 bg-white/20 mx-auto mt-4 rounded-full" />
         </motion.div>
-        
+
         <div className="w-full max-w-md md:max-w-lg">
           {sponsors.poweredBy.map((s, i) => (
-            <SponsorCard 
-              key={i} 
-              item={s} 
-              className="h-56 md:h-64" 
+            <SponsorCard
+              key={i}
+              item={s}
+              className="h-56 md:h-64"
               borderColor="border-blue-500/20 hover:border-blue-500/50"
               glowStyles="hover:shadow-[0_0_50px_-12px_rgba(59,130,246,0.3)]"
               ambientColor="rgba(59,130,246,0.1)"
@@ -172,14 +198,14 @@ export default function Sponsors() {
           </h3>
           <div className="h-1 w-20 bg-white/20 mx-auto mt-4 rounded-full" />
         </motion.div>
-        
+
         <div className="w-full max-w-none px-3 md:px-10 lg:px-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {sponsors.coSponsors.map((s, i) => (
-              <SponsorCard 
-                key={i} 
-                item={s} 
-                className="h-48 md:h-56" 
+              <SponsorCard
+                key={i}
+                item={s}
+                className="h-48 md:h-56"
                 borderColor="border-orange-500/20 hover:border-orange-500/50"
                 glowStyles="hover:shadow-[0_0_50px_-12px_rgba(249,115,22,0.3)]"
                 ambientColor="rgba(249,115,22,0.1)"
@@ -202,14 +228,14 @@ export default function Sponsors() {
           </h3>
           <div className="h-1 w-20 bg-white/10 mx-auto mt-4 rounded-full" />
         </motion.div>
-        
+
         <div className="w-full max-w-none px-3 md:px-10 lg:px-16">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
             {sponsors.oldSponsors.map((s, i) => (
-              <SponsorCard 
-                key={i} 
-                item={s} 
-                className="h-36 md:h-40 opacity-50 hover:opacity-100 transition-opacity duration-300" 
+              <SponsorCard
+                key={i}
+                item={s}
+                className="h-36 md:h-40 opacity-50 hover:opacity-100 transition-opacity duration-300"
                 borderColor="border-white/5 hover:border-white/20"
                 glowStyles="hover:shadow-[0_0_30px_-10px_rgba(255,255,255,0.15)]"
                 ambientColor="rgba(255,255,255,0.05)"
@@ -218,11 +244,6 @@ export default function Sponsors() {
           </div>
         </div>
       </div>
-
-      <div>
-        <img src="../public/dev_Dark.png" alt="DEVFOLIO Logo" />
-      </div>
-
     </div>
   );
 }
