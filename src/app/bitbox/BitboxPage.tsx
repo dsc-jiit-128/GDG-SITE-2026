@@ -34,7 +34,7 @@ export default function BitBoxPage() {
     damping: 30,
     restDelta: 0.001,
   });
-  
+
 
   return (
     <div ref={containerRef} className="roadmap-page-root">
@@ -66,7 +66,9 @@ export default function BitBoxPage() {
         >
           Simplicity is the ultimate sophistication.
         </motion.p>
-       <DevfolioButton/>
+        <div className="mt-10 mb-6 flex justify-center w-full relative z-[60] pointer-events-auto">
+          <DevfolioButton />
+        </div>
       </header>
 
       <div className="roadmap-timeline-spine">

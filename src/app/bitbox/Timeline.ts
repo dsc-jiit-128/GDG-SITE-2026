@@ -1,4 +1,4 @@
-export type TimelineType=  {
+export type TimelineType = {
   id: number;
   title: string;
   description: string;
@@ -9,65 +9,37 @@ export type TimelineType=  {
 export const TimeLineDetails: TimelineType[] = [
   {
     id: 1,
-    title: "Registrations Open",
-    description: "Participants can register for BITBOX 6.0 through the official portal.",
-    date: "Coming soon",
+    title: "Application Deadline",
+    description: "Last date to submit applications for participation.",
+    date: "13 April 2026",
     icon: "📝",
   },
   {
     id: 2,
-    title: "Idea Submission",
-    description: "Teams submit their problem statements and project ideas for shortlisting.",
-    date: "Coming soon",
-    icon: "💡",
+    title: "PPT Submission Deadline",
+    description: "Teams must submit their presentation decks for evaluation.",
+    date: "15 April 2026",
+    icon: "📊",
   },
   {
     id: 3,
-    title: "Shortlisted Teams Announced",
-    description: "Selected teams are announced and invited to participate in the on-site hackathon.",
-    date: "Coming soon",
+    title: "PPT Results",
+    description: "Results of the presentation round are announced.",
+    date: "16 April 2026",
     icon: "✅",
   },
   {
     id: 4,
-    title: "Hackathon Kickoff",
-    description: "Opening ceremony, problem briefing, and team onboarding.",
-    date: "Coming soon",
-    icon: "🚀",
-  },
-  {
-    id: 5,
-    title: "Coding Phase",
-    description: "24-hour coding sprint where teams build, test, and refine their solutions.",
-    date: "Coming soon",
-    icon: "💻",
-  },
-  {
-    id: 6,
-    title: "Mentorship Sessions",
-    description: "Industry mentors guide teams with technical and product insights.",
-    date: "Coming soon",
-    icon: "🎯",
-  },
-  {
-    id: 7,
-    title: "Final Submissions",
-    description: "Teams submit their final projects and pitch decks for evaluation.",
-    date: "Coming soon",
-    icon: "📤",
-  },
-  {
-    id: 8,
-    title: "Project Demos",
-    description: "Live demonstrations of projects in front of judges and audience.",
-    date: "Coming soon",
+    title: "Speakers & Mini Events",
+    description: "Engaging speaker sessions and mini-events for participants.",
+    date: "17 April 2026",
     icon: "🎤",
   },
   {
-    id: 9,
-    title: "Results & Awards",
-    description: "Winners are announced and prizes are distributed.",
-    date: "Coming soon",
+    id: 5,
+    title: "Grand Finale",
+    description: "Final presentations, judging, and announcement of winners.",
+    date: "18 April 2026",
     icon: "🏆",
   },
 ];
