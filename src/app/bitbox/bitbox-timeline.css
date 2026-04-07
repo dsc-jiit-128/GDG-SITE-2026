@@ -358,3 +358,33 @@
   }
   
 }
+
+/* Aurora Scrollbar Styles - scoped to the page having .roadmap-page-root */
+html:has(.roadmap-page-root) *::-webkit-scrollbar {
+  width: 8px;
+}
+
+html:has(.roadmap-page-root) *::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html:has(.roadmap-page-root) *::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #FF0080, #7928CA, #0070F3, #38bdf8, #FF0080);
+  background-size: 200% 200%;
+  border-radius: 4px;
+  animation: aurora-scroll 3s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(158, 122, 255, 0.6);
+}
+
+html:has(.roadmap-page-root) *::-webkit-scrollbar-thumb:hover {
+  box-shadow: 0 0 15px rgba(158, 122, 255, 0.8);
+}
+
+@keyframes aurora-scroll {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
