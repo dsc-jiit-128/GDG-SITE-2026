@@ -72,7 +72,7 @@ export default function BitBoxPage() {
             <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ffffff_0%,#c084fc_10%,#e879f9_30%,transparent_50%)] opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
             <BeveledBorderButton
               title="Register Now"
-              className="text-base sm:text-lg md:text-xl font-bold px-8 py-2.5 md:px-12 md:py-4 bg-neutral-950/90 backdrop-blur-3xl hover:bg-neutral-900 shadow-none border-0"
+              className="text-sm sm:text-lg md:text-xl font-bold px-8 py-2.5 md:px-12 md:py-4 bg-neutral-950/90 backdrop-blur-3xl hover:bg-neutral-900 shadow-none border-0"
               onClick={() => window.open('https://bitbox6-0.devfolio.co/overview', '_blank')}
             />
           </div>

@@ -55,7 +55,7 @@ export default function BentoComponent() {
 
               {/* Bottom center prize amount */}
               <div className="w-full flex items-center justify-center mt-6">
-                <div className={`text-4xl md:text-4xl font-extrabold ${award.amountColor} tracking-tighter drop-shadow-lg`}>
+                <div className={`text-2xl md:text-4xl font-extrabold ${award.amountColor} tracking-tighter drop-shadow-lg`}>
                   {award.amount}
                 </div>
               </div>
