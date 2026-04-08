@@ -121,7 +121,7 @@ export default function Sponsors() {
 
   return (
     <div className="w-[80%] flex flex-col items-center justify-center mt-[150px] mb-[100px]">
-      
+
       {/* Title Sponsors */}
       <div className="w-full flex flex-col items-center mb-[100px]">
         <motion.div
@@ -144,16 +144,6 @@ export default function Sponsors() {
             glowStyles="hover:shadow-[0_0_50px_-12px_rgba(168,85,247,0.3)]"
             ambientColor="rgba(168,85,247,0.1)"
           />
-        </div>
-
-        {/* Devfolio Apply Button */}
-        <div className="flex justify-center mt-10">
-          <div
-            className="apply-button"
-            data-hackathon-slug="bitbox6-0"
-            data-button-theme="dark"
-            style={{ height: "44px", width: "312px" }}
-          ></div>
         </div>
       </div>
 

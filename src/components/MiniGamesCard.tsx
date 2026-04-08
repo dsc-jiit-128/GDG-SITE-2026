@@ -14,7 +14,7 @@ export interface GameCardProps {
 export default function MiniGamesGrid({ games }: { games: GameCardProps[] }) {
   return (
     <div className="w-full max-w-none px-3 md:px-10 lg:px-16 py-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 auto-rows-[230px] md:auto-rows-[260px]">
+      <div className="grid grid-cols-1 md:grid-cols-1 gap-5 auto-rows-[230px] md:auto-rows-[260px]">
         {games.map((game, index) => (
           <div
             key={index}
@@ -28,8 +28,8 @@ export default function MiniGamesGrid({ games }: { games: GameCardProps[] }) {
             <div
               className="absolute inset-0 opacity-0 group-hover:opacity-100 
               transition-opacity duration-500 pointer-events-none"
-              style={{ 
-                backgroundImage: `linear-gradient(${game.ambientColor || 'rgba(255,255,255,0.05)'}, transparent)` 
+              style={{
+                backgroundImage: `linear-gradient(${game.ambientColor || 'rgba(255,255,255,0.05)'}, transparent)`
               }}
             />
 

@@ -5,7 +5,7 @@ import { AwardsData } from "../app/bitbox/Awards";
 
 export default function BentoComponent() {
   return (
-    <div className="w-full max-w-none px-0 md:px-10 lg:px-16 py-8">
+    <div className="w-full max-w-none px-0 md:px-0 lg:px-16 py-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 auto-rows-[230px] md:grid-rows-2">
         {AwardsData.map((award) => (
           <div
@@ -53,10 +53,11 @@ export default function BentoComponent() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-2 text-xs font-medium text-white/50 
-              group-hover:text-white transition-colors cursor-pointer">
-                <span>Learn more</span>
-                <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+              {/* Bottom center prize amount */}
+              <div className="w-full flex items-center justify-center mt-6">
+                <div className={`text-4xl md:text-4xl font-extrabold ${award.amountColor} tracking-tighter drop-shadow-lg`}>
+                  {award.amount}
+                </div>
               </div>
             </div>
 
