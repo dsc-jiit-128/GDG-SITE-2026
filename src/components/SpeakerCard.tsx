@@ -19,19 +19,12 @@ const defaultSpeakers: SpeakerCardProps[] = [
     glowStyles: "hover:shadow-[0_0_30px_-10px_rgba(249,115,22,0.3)]",
     ambientColor: "rgba(249,115,22,0.1)",
   },
-  {
-    name: "Speaker TBD",
-    role: "Tech Visionary",
-    borderColor: "border-blue-500/20",
-    glowStyles: "hover:shadow-[0_0_30px_-10px_rgba(59,130,246,0.3)]",
-    ambientColor: "rgba(59,130,246,0.1)",
-  },
 ];
 
 export default function SpeakerGrid({ speakers = defaultSpeakers }: { speakers?: SpeakerCardProps[] }) {
   return (
     <div className="w-full max-w-none px-3 md:px-10 lg:px-16 py-8" >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-[440px] md:auto-rows-[480px]">
+      <div className="grid grid-cols-1 md:grid-cols-1 gap-6 auto-rows-[440px] md:auto-rows-[480px]">
         {speakers.map((speaker, index) => (
           <div
             key={index}
@@ -45,8 +38,8 @@ export default function SpeakerGrid({ speakers = defaultSpeakers }: { speakers?:
             <div
               className="absolute inset-0 opacity-0 group-hover:opacity-100 
               transition-opacity duration-500 pointer-events-none"
-              style={{ 
-                backgroundImage: `linear-gradient(to bottom, ${speaker.ambientColor || 'rgba(255,255,255,0.05)'}, transparent)` 
+              style={{
+                backgroundImage: `linear-gradient(to bottom, ${speaker.ambientColor || 'rgba(255,255,255,0.05)'}, transparent)`
               }}
             />
 
@@ -62,7 +55,7 @@ export default function SpeakerGrid({ speakers = defaultSpeakers }: { speakers?:
                 />
               ) : (
                 <div className="absolute inset-0 flex items-center justify-end pr-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                   <UserCircle2 size={240} strokeWidth={1} />
+                  <UserCircle2 size={240} strokeWidth={1} />
                 </div>
               )}
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,transparent_20%,rgba(10,10,10,0.9)_100%)]" />

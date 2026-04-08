@@ -11,8 +11,8 @@ import BentoComponent from "@/src/components/BentoGrid";
 import MiniGamesCard from "@/src/components/MiniGamesCard";
 import { mockGames } from "./MiniGameCardDetails";
 import SpeakerGrid from "@/src/components/SpeakerCard";
-import Sponsors from "@/src/components/Sponsors"; // <--- Import the new component
-import DevfolioButton from "./Devfoliobtn";
+import Sponsors from "@/src/components/Sponsors";
+import { BeveledBorderButton } from "@/src/components/BeveledButton";
 
 export default function BitBoxPage() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -66,8 +66,16 @@ export default function BitBoxPage() {
         >
           Simplicity is the ultimate sophistication.
         </motion.p>
-        <div className="mt-10 mb-6 flex justify-center w-full relative z-[60] pointer-events-auto">
-          <DevfolioButton />
+
+        <div className="mt-14 mb-10 flex items-center justify-center w-full relative z-60 pointer-events-auto">
+          <div className="relative group rounded-full p-[1px] overflow-hidden flex items-center justify-center shadow-[0_0_50px_-15px_rgba(168,85,247,0.4)] transition-all hover:shadow-[0_0_80px_-15px_rgba(236,72,153,0.6)] hover:scale-105 active:scale-95 duration-300 cursor-pointer">
+            <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ffffff_0%,#c084fc_10%,#e879f9_30%,transparent_50%)] opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+            <BeveledBorderButton
+              title="Register Now"
+              className="text-base sm:text-lg md:text-xl font-bold px-8 py-2.5 md:px-12 md:py-4 bg-neutral-950/90 backdrop-blur-3xl hover:bg-neutral-900 shadow-none border-0"
+              onClick={() => window.open('https://bitbox6-0.devfolio.co/overview', '_blank')}
+            />
+          </div>
         </div>
       </header>
 
