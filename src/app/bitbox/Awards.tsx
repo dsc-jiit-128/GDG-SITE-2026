@@ -50,7 +50,7 @@ export const AwardsData:AwardsType[] = [
     borderColor: "border-[#cd7f32]/20 hover:border-[#cd7f32]/50",
     glowStyles: "group-hover:shadow-[0_0_50px_-12px_rgba(205,127,50,0.3)]",
     ambientColor: "from-[#CD7F32]/10",
-    amount: "₹4,000",
+    amount: "₹5,000",
     amountColor: "text-[#CD7F32]",
   },
 ];
