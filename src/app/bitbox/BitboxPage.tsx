@@ -131,7 +131,7 @@ export default function BitBoxPage() {
         </div>
       </div>
 
-      <div className="w-[80%] flex flex-col items-center justify-center mt-[200px] mb-[100px]">
+      <div className="w-[95%] md:w-[90%] xl:w-[80%] max-w-[1400px] flex flex-col items-center justify-center mt-[200px] mb-[100px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -144,7 +144,7 @@ export default function BitBoxPage() {
           <div className="h-1 w-20 bg-white/20 mx-auto mt-4 rounded-full" />
         </motion.div>
 
-        <div className="w-[120%] md:w-[80%] lg:w-[70%] px-4 md:px-0 ">
+        <div className="w-full px-4 md:px-0 ">
           <SpeakerGrid />
         </div>
       </div>
