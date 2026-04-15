@@ -11,8 +11,6 @@ const sponsors = {
   ],
   poweredBy: [],
   coSponsors: [
-    { name: "Stoxify", logo: "/Sponsors/stoxify.webp", link: "#" },
-    { name: "Tradewiz", logo: "/Sponsors/tradewiz.webp", link: "#" },
     { name: ".xyz", logo: "/Sponsors/xyzz.webp", link: "https://gen.xyz/" },
     { name: "Interview Buddy", logo: "/Sponsors/InterviewBuddy.svg", link: "https://interviewbuddy.net/", bgWhite: true },
     { name: "RevUp", logo: "/Sponsors/RevupLifeSkills.jpg", link: "https://www.instagram.com/revuplifeskills/" },
