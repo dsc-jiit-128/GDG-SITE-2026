@@ -10,7 +10,7 @@ import { AuroraText } from "@/src/components/ui/aurora-text";
 import BentoComponent from "@/src/components/BentoGrid";
 import MiniGamesCard from "@/src/components/MiniGamesCard";
 import { mockGames } from "./MiniGameCardDetails";
-import SpeakerGrid from "@/src/components/SpeakerCard";
+import SpeakerGrid, { defaultJudges, defaultSpeakers } from "@/src/components/SpeakerCard";
 import Sponsors from "@/src/components/Sponsors";
 import { BeveledBorderButton } from "@/src/components/BeveledButton";
 
@@ -139,13 +139,31 @@ export default function BitBoxPage() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter">
+            Our <AuroraText> Speakers</AuroraText>
+          </h2>
+          <div className="h-1 w-20 bg-white/20 mx-auto mt-4 rounded-full" />
+        </motion.div>
+
+        <div className="w-full px-4 md:px-0 ">
+          <SpeakerGrid speakers={defaultSpeakers} />
+        </div>
+      </div>
+
+      <div className="w-[95%] md:w-[90%] xl:w-[80%] max-w-[1400px] flex flex-col items-center justify-center mt-[100px] mb-[100px]">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter">
             Our <AuroraText> Judges</AuroraText>
           </h2>
           <div className="h-1 w-20 bg-white/20 mx-auto mt-4 rounded-full" />
         </motion.div>
 
         <div className="w-full px-4 md:px-0 ">
-          <SpeakerGrid />
+          <SpeakerGrid speakers={defaultJudges} />
         </div>
       </div>
       <Sponsors />

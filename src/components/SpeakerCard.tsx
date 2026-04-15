@@ -11,11 +11,38 @@ export interface SpeakerCardProps {
   ambientColor?: string;
 }
 
-const defaultSpeakers: SpeakerCardProps[] = [
+export const defaultSpeakers: SpeakerCardProps[] = [
   {
     name: "Harshit Trehan",
     role: "SDE 2 @ Atlassian",
     image: "/speakers/harshit_trehan.webp",
+    borderColor: "border-pink-500/20",
+    glowStyles: "hover:shadow-[0_0_30px_-10px_rgba(236,72,153,0.3)]",
+    ambientColor: "rgba(236,72,153,0.1)",
+  },
+  {
+    name: "Raghav Garg",
+    role: "Senior Member of Technical Staff @ GFG",
+    image: "/speakers/raghav-garg.webp",
+    borderColor: "border-pink-500/20",
+    glowStyles: "hover:shadow-[0_0_30px_-10px_rgba(236,72,153,0.3)]",
+    ambientColor: "rgba(236,72,153,0.1)",
+  }
+];
+
+export const defaultJudges: SpeakerCardProps[] = [
+  {
+    name: "Harshit Trehan",
+    role: "SDE 2 @ Atlassian",
+    image: "/speakers/harshit_trehan.webp",
+    borderColor: "border-pink-500/20",
+    glowStyles: "hover:shadow-[0_0_30px_-10px_rgba(236,72,153,0.3)]",
+    ambientColor: "rgba(236,72,153,0.1)",
+  },
+  {
+    name: "Raghav Garg",
+    role: "Senior Member of Technical Staff @ GFG",
+    image: "/speakers/raghav-garg.webp",
     borderColor: "border-pink-500/20",
     glowStyles: "hover:shadow-[0_0_30px_-10px_rgba(236,72,153,0.3)]",
     ambientColor: "rgba(236,72,153,0.1)",
@@ -44,8 +71,6 @@ const defaultSpeakers: SpeakerCardProps[] = [
     glowStyles: "hover:shadow-[0_0_30px_-10px_rgba(168,85,247,0.3)]",
     ambientColor: "rgba(168,85,247,0.1)",
   }
-
-
 ];
 
 export default function SpeakerGrid({ speakers = defaultSpeakers }: { speakers?: SpeakerCardProps[] }) {
