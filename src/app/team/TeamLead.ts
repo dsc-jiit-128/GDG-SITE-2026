@@ -23,7 +23,7 @@ const teamData = [
       "linkedin": "https://www.linkedin.com/in/vaibhavkatariyaa",
       "instagram": "https://www.instagram.com/acevaibhav/",
       "discord": "https://discord.com/users/vaibhavkatariyaa",
-      "website": "https://www.kaily.in"
+      "website": "https://www.vaibhavkatariya.in"
     }
   },
   {
