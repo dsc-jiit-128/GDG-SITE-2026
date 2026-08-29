@@ -65,4 +65,4 @@ Contributions, issues, and feature requests are always welcome! Feel free to che
 5. Open a Pull Request
 
 ---
-*Built with ❤️ by the GDG JIIT 128 Web Team.*
+*Built with ❤️ by the GDG JIIT 128 Web Team*
